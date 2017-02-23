@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Draw</title>
+  <link rel="stylesheet" href="draw.css">
+</head>
+<body>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <div class="selector">
+        <ul>
+            <li><span>Options:</span></li>
+            <li class="clear-c">Clear canvas</li>
+
+            <li class="lineWidth first-menu">Line Width
+                <ul class="second-menu">
+                    <li><input type="range" id="lineWidthSlider" class="slider" min="1" max="100" value="10"></li>
+                </ul>
+            </li>
+
+            <li class="blending first-menu">Blending
+                <ul class="second-menu">
+                    <li id="source-over" class="blendingBtn">Source-over(Default)</li>
+                    <li id="multiply" class="blendingBtn">Multiply</li>
+                    <li id="darken" class="blendingBtn">Darken</li>
+                    <li id="overlay" class="blendingBtn">Overlay</li>
+                    <li id="screen" class="blendingBtn">Screen</li>
+                    <li id="xor" class="blendingBtn">Xor</li>
+                    <li id="color-dodge" class="blendingBtn">Color-dodge</li>
+                    <li id="color-burn" class="blendingBtn">Color-burn</li>
+                    <li id="hard-light" class="blendingBtn">Hard-light</li>
+                    <li id="soft-light" class="blendingBtn">Soft-light</li>
+                    <li id="difference" class="blendingBtn">Difference</li>
+                    <li id="exclusion" class="blendingBtn">Exclusion</li>
+                    <li id="saturation" class="blendingBtn">Saturation</li>
+                </ul>
+            </li>
+
+            <li class="color first-menu">Color
+                <ul class="second-menu">
+                    <li id="colorpicker" class="colorBtn"><input id="colorpickerslider" type="color" value="#BADA55"></li>
+                    <li id="rainbow" class="colorBtn">Rainbow</li>
+                    <li id="strendcolor" class="colorBtn">**startcolor-endcolor**</li>
+                </ul>
+            </li>
+
+            <li class="lineJoin first-menu">LineJoin
+                <ul class="second-menu">
+                    <li id="round" class="lineJoinBtn">Round</li>
+                    <li id="bevel" class="lineJoinBtn">Bevel</li>
+                    <li id="miter" class="lineJoinBtn">Miter</li>
+                </ul>
+            </li>
+
+            <li class="lineCap first-menu">LineCap
+                <ul class="second-menu">
+                    <li id="round" class="lineCapBtn">Round</li>
+                    <li id="butt" class="lineCapBtn">Butt</li>
+                    <li id="square" class="lineCapBtn">Square</li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+    <script src="draw.js"></script>
+</body>
+</html>

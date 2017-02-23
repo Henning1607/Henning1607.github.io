@@ -1,0 +1,53 @@
+html, body {
+    margin:0;
+}
+
+.selector {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+}
+
+.selector > ul {
+    list-style-type: none;
+    position:relative;
+    float:right;
+}
+
+.selector > span {
+    float:right;
+}
+
+li {
+    padding: 3px;
+    list-style-type: none;
+}
+
+li:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+ul > .active {
+    background-color: yellow;
+}
+
+.selector ul li {
+    float: none;
+    vertical-align: middle;
+    position: relative;
+}
+
+.selector ul ul {
+    position: absolute;
+    top: 1px;
+    right: 99%;
+    display: none;
+    border: 1px solid #0082e7;
+    padding: 5px;
+}
+
+.first-menu:hover ul, .more:hover ul {
+    display:block;
+}

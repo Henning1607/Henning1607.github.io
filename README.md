@@ -1,4 +1,4 @@
-# fun-with-canvas
+# Fun with canvas
 Showing some of the canvas options with a simple drawing program
 
 WIP

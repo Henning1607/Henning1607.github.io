@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 
 //Menu elements
 const clear = document.querySelector('.clear-c');
+const randomWidth = document.querySelector('#randomWidth');
 const blendingBtn = document.querySelectorAll('.blendingBtn');
 const colorBtn = document.querySelectorAll('.colorBtn');
 const lineJoinBtn = document.querySelectorAll('.lineJoinBtn');
@@ -32,7 +33,7 @@ let lastY = 0;
 let hue = 0;
 let direction = true;
 let isRainbow = false;
-let randomWidth = false; //TODO
+let randomLineWidth = false;
 
 function draw(e) {
     if (!isDrawing) return; // stop the function from running when they are not moused down
@@ -54,16 +55,17 @@ function draw(e) {
     }
     
     //Random width:
-    /*
-    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
-        direction = !direction;
+    if(randomLineWidth){
+        if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+            direction = !direction;
+        }
+        if(direction) {
+            ctx.lineWidth++;
+        } else {
+            ctx.lineWidth--;
+        }
     }
-    if(direction) {
-        ctx.lineWidth++;
-    } else {
-        ctx.lineWidth--;
-    }
-    */
+    
 }
 
 //Changes the globalCompositeOperation value
@@ -151,6 +153,15 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
 
 //Menu elements
 clear.addEventListener('click', clearCanvas);
+randomWidth.addEventListener('change',() =>{
+    randomLineWidth = !randomLineWidth;
+    if(randomLineWidth){
+        document.getElementById("lineWidthSlider").disabled = true;
+    } else {
+        document.getElementById("lineWidthSlider").disabled = false;
+    }
+    console.log(randomLineWidth);
+});
 blendingBtn.forEach(button => button.addEventListener('click', changeGCO));
 colorBtn.forEach(button => button.addEventListener('click', changeColor));
 lineJoinBtn.forEach(blendButton => blendButton.addEventListener('click', changeLineJoin));

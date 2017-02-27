@@ -22,6 +22,7 @@ html, body {
 li {
     padding: 3px;
     list-style-type: none;
+    background-color: #fff;
 }
 
 li:hover {

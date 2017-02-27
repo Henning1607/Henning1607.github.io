@@ -71,7 +71,14 @@ function changeGCO() {
 
 //Removes/adds highlighted options on the menu
 function GCOcolor(active) {
-    blendingBtn.forEach(button => {
+    var classArray = [];
+    Array.prototype.forEach.call(active.classList, child => {
+        classArray = [child];
+        
+    })
+
+    var name = classArray.toString();
+    eval(name).forEach(button => {
         if(button.classList.contains('active')){
             button.classList.remove('active');
         }
@@ -82,10 +89,12 @@ function GCOcolor(active) {
 function changeLineJoin() {
     console.log(this.id);
     ctx.lineJoin = this.id;
+    GCOcolor(this);
 }
 
 function changeLineCap(){
     ctx.lineCap = this.id;
+    GCOcolor(this);
 }
 
 function changeLineWidth(){
@@ -97,13 +106,15 @@ function changeColor(){
     switch(this.id){
         case "colorpicker":
         //Bit messy, look into later
-            colorpickerslider.addEventListener('change',(value) => {
+            colorpickerslider.addEventListener("change",(value) => {
                 ctx.strokeStyle = document.getElementById("colorpickerslider").value;
             });
             isRainbow = false;
+            GCOcolor(this);
             break;
         case "rainbow":
             isRainbow = true;
+            GCOcolor(this);
             break;
     }
 }

@@ -23,6 +23,12 @@
                 </ul>
             </li>
 
+            <li class="transparency first-menu">Transparency
+                <ul class="second-menu">
+                    <li><input type="range" id="transparencySlider" class="slider" min="1" max="100" value="100"></li>
+                </ul>
+            </li>
+
             <li class="blending first-menu">Blending
                 <ul class="second-menu">
                     <li id="source-over" class="blendingBtn">Source-over(Default)</li>
@@ -43,9 +49,12 @@
 
             <li class="color first-menu">Color
                 <ul class="second-menu">
-                    <li id="colorpicker" class="colorBtn"><input id="colorpickerslider" type="color" value="#BADA55"></li>
+                    <li id="colorpicker" class="colorBtn">
+                        <input id="colorpickerslider" type="color" value="#BADA55"></li>
                     <li id="rainbow" class="colorBtn">Rainbow</li>
-                    <li id="strendcolor" class="colorBtn">**startcolor-endcolor**</li>
+                    <li id="fillscreen" class="colorBtn">Fill entire screen
+                        <input id="fillcolorslider" type="color" value="#BADA55">
+                    </li>
                 </ul>
             </li>
 

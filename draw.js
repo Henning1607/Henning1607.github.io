@@ -11,7 +11,9 @@ const lineCapBtn = document.querySelectorAll('.lineCapBtn');
 
 //Sliders, colorpicker
 const lineWidthSlider = document.querySelector('#lineWidthSlider');
+const transparencySlider = document.querySelector('#transparencySlider');
 const colorpickerslider = document.querySelector('#colorpickerslider');
+const fillcolorslider = document.querySelector('#fillcolorslider');
 
 canvas.width = window.innerWidth - 10; /*Fix later */
 canvas.height = window.innerHeight -10; /*Fix later */
@@ -21,6 +23,8 @@ ctx.lineJoin = 'miter';
 ctx.lineCap = 'round';
 ctx.lineWidth = 10;
 ctx.globalCompositeOperation = '';
+ctx.globalAlpha = '50';
+
 
 let isDrawing = false;
 let lastX = 0;
@@ -31,7 +35,7 @@ let isRainbow = false;
 let randomWidth = false; //TODO
 
 function draw(e) {
-    if (!isDrawing) return; // stop the fn from running when they are not moused down
+    if (!isDrawing) return; // stop the function from running when they are not moused down
     ctx.beginPath();
     // start from
     ctx.moveTo(lastX, lastY);
@@ -63,8 +67,7 @@ function draw(e) {
 }
 
 //Changes the globalCompositeOperation value
-function changeGCO() {
-    console.log(this.id);    
+function changeGCO() {  
     ctx.globalCompositeOperation = this.id;
     GCOcolor(this);
 }
@@ -76,9 +79,9 @@ function GCOcolor(active) {
         classArray = [child];
         
     })
-
     var name = classArray.toString();
-    eval(name).forEach(button => {
+    console.log(name);
+    eval(name).forEach(button => { //Error when coming from color function, still works though
         if(button.classList.contains('active')){
             button.classList.remove('active');
         }
@@ -102,6 +105,11 @@ function changeLineWidth(){
     console.log(this.value);
 }
 
+function changeTransparency(){
+    ctx.globalAlpha = this.value;
+    console.log(this.value);
+}
+
 function changeColor(){
     switch(this.id){
         case "colorpicker":
@@ -116,6 +124,14 @@ function changeColor(){
             isRainbow = true;
             GCOcolor(this);
             break;
+        case "fillscreen":
+            fillcolorslider.addEventListener("change",(value) => {
+                ctx.fillStyle = document.getElementById("fillcolorslider").value;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                GCOcolor(this);
+            });
+            console.log(document.getElementById("colorpickerslider").value);
+            
     }
 }
 
@@ -142,3 +158,4 @@ lineCapBtn.forEach(lineCapButton => lineCapButton.addEventListener('click', chan
 
 //Sliders, colorpicker
 lineWidthSlider.addEventListener('change', changeLineWidth);
+transparencySlider.addEventListener('change', changeTransparency);

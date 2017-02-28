@@ -9,6 +9,8 @@ const blendingBtn = document.querySelectorAll('.blendingBtn');
 const colorBtn = document.querySelectorAll('.colorBtn');
 const lineJoinBtn = document.querySelectorAll('.lineJoinBtn');
 const lineCapBtn = document.querySelectorAll('.lineCapBtn');
+const saveImage = document.querySelector('.saveImage');
+const randomPattern = document.querySelector('.patternBtn');
 
 //Sliders, colorpicker
 const lineWidthSlider = document.querySelector('#lineWidthSlider');
@@ -16,15 +18,15 @@ const transparencySlider = document.querySelector('#transparencySlider');
 const colorpickerslider = document.querySelector('#colorpickerslider');
 const fillcolorslider = document.querySelector('#fillcolorslider');
 
-canvas.width = window.innerWidth - 10; /*Fix later */
-canvas.height = window.innerHeight -10; /*Fix later */
+canvas.width = window.innerWidth - 4; /*Fix later */
+canvas.height = window.innerHeight -4; /*Fix later */
 
 ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'miter';
 ctx.lineCap = 'round';
 ctx.lineWidth = 10;
 ctx.globalCompositeOperation = '';
-ctx.globalAlpha = '50';
+ctx.globalAlpha = '1';
 
 
 let isDrawing = false;
@@ -34,6 +36,7 @@ let hue = 0;
 let direction = true;
 let isRainbow = false;
 let randomLineWidth = false;
+let patternNum = 1;
 
 function draw(e) {
     if (!isDrawing) return; // stop the function from running when they are not moused down
@@ -68,12 +71,6 @@ function draw(e) {
     
 }
 
-//Changes the globalCompositeOperation value
-function changeGCO() {  
-    ctx.globalCompositeOperation = this.id;
-    GCOcolor(this);
-}
-
 //Removes/adds highlighted options on the menu
 function GCOcolor(active) {
     var classArray = [];
@@ -89,6 +86,12 @@ function GCOcolor(active) {
         }
     });
     active.classList += " active";
+}
+
+//Changes the globalCompositeOperation value
+function changeGCO() {  
+    ctx.globalCompositeOperation = this.id;
+    GCOcolor(this);
 }
 
 function changeLineJoin() {
@@ -166,6 +169,26 @@ blendingBtn.forEach(button => button.addEventListener('click', changeGCO));
 colorBtn.forEach(button => button.addEventListener('click', changeColor));
 lineJoinBtn.forEach(blendButton => blendButton.addEventListener('click', changeLineJoin));
 lineCapBtn.forEach(lineCapButton => lineCapButton.addEventListener('click', changeLineCap));
+//Opens a new window with the canvas as a PNG image
+saveImage.addEventListener('click',() => {
+    var canvas = document.getElementById("draw");
+    var img    = canvas.toDataURL("image/png");
+    document.write('<img src="'+img+'"/>');
+})
+//Creates a pattern, based on images that exists in the Patterns folder, on the canvas
+randomPattern.addEventListener('click', () => {
+    var img = new Image();
+    img.src = 'Patterns/pattern' + patternNum + ".png";
+    console.log(img.src);
+    img.onload = function(){
+        var ptrn = ctx.createPattern(img,'repeat');
+        ctx.fillStyle = ptrn;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    patternNum++;
+    if(patternNum >= 5){patternNum = 1};
+    
+})
 
 //Sliders, colorpicker
 lineWidthSlider.addEventListener('change', changeLineWidth);

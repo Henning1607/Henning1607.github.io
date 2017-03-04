@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 
 //Menu elements
 const clear = document.querySelector('.clear-c');
+const resetOpt = document.querySelector('.reset-opt');
 const randomWidth = document.querySelector('#randomWidth');
 const blendingBtn = document.querySelectorAll('.blendingBtn');
 const colorBtn = document.querySelectorAll('.colorBtn');
@@ -25,9 +26,8 @@ ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'miter';
 ctx.lineCap = 'round';
 ctx.lineWidth = 10;
-ctx.globalCompositeOperation = '';
-ctx.globalAlpha = '1';
-
+ctx.globalCompositeOperation = ''; //Blending
+ctx.globalAlpha = '1'; //Transparency
 
 let isDrawing = false;
 let lastX = 0;
@@ -76,43 +76,14 @@ function GCOcolor(active) {
     var classArray = [];
     Array.prototype.forEach.call(active.classList, child => {
         classArray = [child];
-        
     })
     var name = classArray.toString();
-    console.log(name);
     eval(name).forEach(button => { //Error when coming from color function, still works though
         if(button.classList.contains('active')){
             button.classList.remove('active');
         }
     });
     active.classList += " active";
-}
-
-//Changes the globalCompositeOperation value
-function changeGCO() {  
-    ctx.globalCompositeOperation = this.id;
-    GCOcolor(this);
-}
-
-function changeLineJoin() {
-    console.log(this.id);
-    ctx.lineJoin = this.id;
-    GCOcolor(this);
-}
-
-function changeLineCap(){
-    ctx.lineCap = this.id;
-    GCOcolor(this);
-}
-
-function changeLineWidth(){
-    ctx.lineWidth = this.value;
-    console.log(this.value);
-}
-
-function changeTransparency(){
-    ctx.globalAlpha = this.value;
-    console.log(this.value);
 }
 
 function changeColor(){
@@ -135,14 +106,7 @@ function changeColor(){
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 GCOcolor(this);
             });
-            console.log(document.getElementById("colorpickerslider").value);
-            
     }
-}
-
-//Clears all the drawing off the canvas
-function clearCanvas(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 canvas.addEventListener('mousedown', (e) => {
@@ -155,7 +119,10 @@ canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
 
 //Menu elements
-clear.addEventListener('click', clearCanvas);
+clear.addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
 randomWidth.addEventListener('change',() =>{
     randomLineWidth = !randomLineWidth;
     if(randomLineWidth){
@@ -165,21 +132,48 @@ randomWidth.addEventListener('change',() =>{
     }
     console.log(randomLineWidth);
 });
-blendingBtn.forEach(button => button.addEventListener('click', changeGCO));
+
+resetOpt.addEventListener('click', () =>{
+    hue = 0;
+    isRainbow = false;
+    randomLineWidth = false;
+    patternNum = 1;
+    ctx.strokeStyle = '#BADA55';
+    ctx.lineJoin = 'miter';
+    ctx.lineCap = 'round';
+    ctx.lineWidth = 10;
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = '1';
+    //Actives on menu elements
+});
+
+blendingBtn.forEach(button => button.addEventListener('click', function(){
+    ctx.globalCompositeOperation = this.id;
+    GCOcolor(this);
+}));
+
 colorBtn.forEach(button => button.addEventListener('click', changeColor));
-lineJoinBtn.forEach(blendButton => blendButton.addEventListener('click', changeLineJoin));
-lineCapBtn.forEach(lineCapButton => lineCapButton.addEventListener('click', changeLineCap));
+lineJoinBtn.forEach(blendButton => blendButton.addEventListener('click', function(){
+    ctx.lineJoin = this.id;
+    GCOcolor(this);
+}));
+
+lineCapBtn.forEach(lineCapButton => lineCapButton.addEventListener('click', function() {
+    ctx.lineCap = this.id;
+    GCOcolor(this);
+}));
+
 //Opens a new window with the canvas as a PNG image
 saveImage.addEventListener('click',() => {
     var canvas = document.getElementById("draw");
     var img    = canvas.toDataURL("image/png");
     document.write('<img src="'+img+'"/>');
 })
+
 //Creates a pattern, based on images that exists in the Patterns folder, on the canvas
 randomPattern.addEventListener('click', () => {
     var img = new Image();
     img.src = 'Patterns/pattern' + patternNum + ".png";
-    console.log(img.src);
     img.onload = function(){
         var ptrn = ctx.createPattern(img,'repeat');
         ctx.fillStyle = ptrn;
@@ -187,9 +181,13 @@ randomPattern.addEventListener('click', () => {
     }
     patternNum++;
     if(patternNum >= 5){patternNum = 1};
-    
 })
 
 //Sliders, colorpicker
-lineWidthSlider.addEventListener('change', changeLineWidth);
-transparencySlider.addEventListener('change', changeTransparency);
+lineWidthSlider.addEventListener('change', function(){
+    ctx.lineWidth = this.value;
+});
+
+transparencySlider.addEventListener('change', function(){
+    ctx.globalAlpha = this.value;
+});

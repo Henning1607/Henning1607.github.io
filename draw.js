@@ -70,6 +70,13 @@ function draw(e) {
     }
     
 }
+//Resets the slider positions etc...
+function updateReset (){
+    lineWidthSlider.value=10;
+    lineWidthSlider.disabled = false;
+    randomWidth.checked = false;
+    transparencySlider.value = 1;
+}
 
 //Removes/adds highlighted options on the menu
 function GCOcolor(active) {
@@ -87,9 +94,9 @@ function GCOcolor(active) {
 }
 
 function changeColor(){
+    //Bit messy, look into later
     switch(this.id){
         case "colorpicker":
-        //Bit messy, look into later
             colorpickerslider.addEventListener("change",(value) => {
                 ctx.strokeStyle = document.getElementById("colorpickerslider").value;
             });
@@ -124,13 +131,12 @@ clear.addEventListener('click', () => {
 });
 
 randomWidth.addEventListener('change',() =>{
-    randomLineWidth = !randomLineWidth;
+    randomLineWidth = !randomLineWidth; //Toggles random width
     if(randomLineWidth){
-        document.getElementById("lineWidthSlider").disabled = true;
+        lineWidthSlider.disabled = true;
     } else {
-        document.getElementById("lineWidthSlider").disabled = false;
+        lineWidthSlider.disabled = false;
     }
-    console.log(randomLineWidth);
 });
 
 resetOpt.addEventListener('click', () =>{
@@ -144,6 +150,7 @@ resetOpt.addEventListener('click', () =>{
     ctx.lineWidth = 10;
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = '1';
+    updateReset();
     //Actives on menu elements
 });
 
@@ -191,3 +198,5 @@ lineWidthSlider.addEventListener('change', function(){
 transparencySlider.addEventListener('change', function(){
     ctx.globalAlpha = this.value;
 });
+
+window.onload = updateReset;

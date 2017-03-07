@@ -12,87 +12,158 @@
     <div class="selector">
         <nav>
             <ul>
-                <li><span>Options:</span></li>
-                <li class="clear-c">Clear canvas</li>
-                <li class="reset-opt">Reset options</li>
-                <li class="upload first-menu">Upload a picture
-                    <ul class="second-menu">
-                        <li>TODO</li>
-                    </ul>
+                <li><span>Options</span></li>
+
+                <li class="clear-c only-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/011-arrows.png" class="icon">
+                        </div>
+                        <span class="navtext">Clear canvas</span>
+                    </div>
                 </li>
 
-                <li class="lineWidth first-menu">Line Width
-                    <ul class="second-menu">
-                        <li>
-                            <input type="range" id="lineWidthSlider" class="slider" min="1" max="100" value="10"></li>
-                        <li>
-                            <input type="checkbox" id="randomWidth" class="checkb">
-                            <label for="randomWidth">Random width</label>
-                        </li>
-                    </ul>
+                <li class="reset-opt only-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/010-power-button.png" class="icon">
+                        </div>
+                        <span class="navtext">Reset options</span>
+                    </div>
                 </li>
 
-                <li class="transparency first-menu">Transparency
-                    <ul class="second-menu">
-                        <li>
-                            <input type="range" id="transparencySlider" class="slider" min="0" max="1" step="0.1" value="1">
-                        </li>
-                    </ul>
+                <li class="upload first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/009-upload.png" class="icon"></i>
+                        </div>
+                        <span class="navtext">Upload a picture</span>
+                        <ul class="second-menu">
+                            <li>TODO</li>
+                        </ul>
+                    </div>
                 </li>
 
-                <li class="blending first-menu">Blending
-                    <ul class="second-menu">
-                        <li id="source-over" class="blendingBtn">Source-over(Default)</li>
-                        <li id="multiply" class="blendingBtn">Multiply</li>
-                        <li id="darken" class="blendingBtn">Darken</li>
-                        <li id="overlay" class="blendingBtn">Overlay</li>
-                        <li id="screen" class="blendingBtn">Screen</li>
-                        <li id="xor" class="blendingBtn">Xor</li>
-                        <li id="colordodge" class="blendingBtn">Color-dodge</li>
-                        <li id="colorburn" class="blendingBtn">Color-burn</li>
-                        <li id="hardlight" class="blendingBtn">Hard-light</li>
-                        <li id="softlight" class="blendingBtn">Soft-light</li>
-                        <li id="difference" class="blendingBtn">Difference</li>
-                        <li id="exclusion" class="blendingBtn">Exclusion</li>
-                        <li id="saturation" class="blendingBtn">Saturation</li>
-                    </ul>
+                <li class="lineWidth first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/008-house.png" class="icon">
+                        </div>
+                        <span class="navtext">Line Width</span>
+                        <ul class="second-menu">
+                            <li>
+                                <input type="range" id="lineWidthSlider" class="slider" min="1" max="100" value="10"></li>
+                            <li>
+                                <input type="checkbox" id="randomWidth" class="checkb">
+                                <label for="randomWidth">Random width</label>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
-                <li class="color first-menu">Color
-                    <ul class="second-menu">
-                        <li id="colorpicker" class="colorBtn">
-                            <input id="colorpickerslider" type="color" value="#BADA55"></li>
-                        <li id="rainbow" class="colorBtn">Rainbow</li>
-                        <li id="fillscreen" class="colorBtn">Fill entire screen
-                            <input id="fillcolorslider" type="color" value="#BADA55">
-                        </li>
-                    </ul>
+                <li class="transparency first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/007-transparency.png" class="icon">
+                        </div>
+                        <span class="navtext">Transparency</span>
+                        <ul class="second-menu">
+                            <li>
+                                <input type="range" id="transparencySlider" class="slider" min="0" max="1" step="0.1" value="1">
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
-                <li class="color first-menu">Pattern
-                    <ul class="second-menu">
-                        <li id="randomPattern" class="patternBtn">Random pattern</li>
-                    </ul>
+                <li class="blending first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/005-blender-outline.png" class="icon">
+                        </div>
+                        <span class="navtext">Blending</span>
+                        <ul class="second-menu">
+                            <li id="source-over" class="blendingBtn">Source-over(Default)</li>
+                            <li id="multiply" class="blendingBtn">Multiply</li>
+                            <li id="darken" class="blendingBtn">Darken</li>
+                            <li id="overlay" class="blendingBtn">Overlay</li>
+                            <li id="screen" class="blendingBtn">Screen</li>
+                            <li id="xor" class="blendingBtn">Xor</li>
+                            <li id="colordodge" class="blendingBtn">Color-dodge</li>
+                            <li id="colorburn" class="blendingBtn">Color-burn</li>
+                            <li id="hardlight" class="blendingBtn">Hard-light</li>
+                            <li id="softlight" class="blendingBtn">Soft-light</li>
+                            <li id="difference" class="blendingBtn">Difference</li>
+                            <li id="exclusion" class="blendingBtn">Exclusion</li>
+                            <li id="saturation" class="blendingBtn">Saturation</li>
+                        </ul>
+                    </div>
                 </li>
 
-                <li class="lineJoin first-menu">LineJoin
-                    <ul class="second-menu">
-                        <li id="round" class="lineJoinBtn">Round</li>
-                        <li id="bevel" class="lineJoinBtn">Bevel</li>
-                        <li id="miter" class="lineJoinBtn">Miter</li>
-                    </ul>
+                <li class="color first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/004-pallete.png" class="icon">
+                        </div>
+                        <span class="navtext">Color</span>
+                        <ul class="second-menu">
+                            <li id="colorpicker" class="colorBtn">
+                                <input id="colorpickerslider" type="color" value="#BADA55"></li>
+                            <li id="rainbow" class="colorBtn">Rainbow</li>
+                            <li id="fillscreen" class="colorBtn">Fill entire screen
+                                <input id="fillcolorslider" type="color" value="#BADA55">
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
-                <li class="lineCap first-menu">LineCap
-                    <ul class="second-menu">
-                        <li id="round" class="lineCapBtn">Round</li>
-                        <li id="butt" class="lineCapBtn">Butt</li>
-                        <li id="square" class="lineCapBtn">Square</li>
-                    </ul>
+                <li class="color first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/001-parquet.png" class="icon">
+                        </div>
+                        <span class="navtext">Pattern</span>
+                        <ul class="second-menu">
+                            <li id="randomPattern" class="patternBtn">Random pattern</li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="saveImage first-menu">Save canvas as image
-                    <!-- Probably not needed
-                        <ul>Right click > "save image as..."</ul>-->
+
+                <li class="lineJoin first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/006-broken-link.png" class="icon">
+                        </div>
+                        <span class="navtext">LineJoin</span>
+                        <ul class="second-menu">
+                            <li id="round" class="lineJoinBtn">Round</li>
+                            <li id="bevel" class="lineJoinBtn">Bevel</li>
+                            <li id="miter" class="lineJoinBtn">Miter</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="lineCap first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/002-menu.png" class="icon">
+                        </div>
+                        <span class="navtext">LineCap</span>
+                        <ul class="second-menu">
+                            <li id="round" class="lineCapBtn">Round</li>
+                            <li id="butt" class="lineCapBtn">Butt</li>
+                            <li id="square" class="lineCapBtn">Square</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="saveImage first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/003-save.png" class="icon">
+                        </div>
+                        <span class="navtext">Save canvas as image</span>
+                        <!-- Probably not needed
+                            <ul>Right click > "save image as..."</ul>-->
+                        </div>
                 </li>
             </ul>
         </nav>
@@ -100,3 +171,12 @@
     <script src="draw.js"></script>
 </body>
 </html>
+
+<!--
+Icons from flaticon.com
+Credit to authors:
+Freepick : http://www.freepik.com
+Madebyoliver
+Appzgear : http://appzgear.com
+Gregor Cresnar
+-->

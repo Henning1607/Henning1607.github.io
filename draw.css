@@ -1,16 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:300);
+
 html, body {
     margin:0;
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .selector {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     display: inline-block;
+    height:100%;
+    border-right:1px solid #e5e5e5;
+    background-color: #f5f5f5;
 }
 
 .selector > ul {
@@ -26,12 +31,21 @@ body {
 li {
     padding: 3px;
     list-style-type: none;
-    background-color: #fff;
 }
 
-li:hover {
-    background-color: #ddd;
+.first-menu:hover, .second-menu > li:hover, .only-menu:hover {
+    background-color: #5fa2db;
     cursor: pointer;
+}
+
+.first-menu:hover > .li-wrap > .navtext,
+li:hover,
+.only-menu:hover > .li-wrap > .navtext {
+    color: #fff;
+}
+
+.first-menu:hover .second-menu {
+    color:#999;
 }
 
 ul > .active {
@@ -46,8 +60,7 @@ ul > .active {
 
 .selector ul ul {
     position: absolute;
-    top: 1px;
-    right: 99%;
+    top: 0;
     display: none;
     border: 1px solid #0082e7;
     padding: 5px;
@@ -57,22 +70,22 @@ ul > .active {
     display:block;
 }
 
-
 nav:hover,nav.expanded {
-width:250px;
-overflow:visible;
+    width:200px;
+    overflow:visible;
+}
+
+i {
+    color:black;
 }
 
 nav {
-    background:#fbfbfb;
-border-left:1px solid #e5e5e5;
-height:100%;
-width:60px;
-overflow:hidden;
--webkit-transition:width .05s linear;
-transition:width .05s linear;
--webkit-transform:translateZ(0) scale(1,1);
-z-index:1000;
+    width:55px;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1,1);
+    z-index:1000;
 }
 
 nav > ul {
@@ -80,13 +93,54 @@ nav > ul {
     padding: 0;
 }
 
-nav li {
+nav > ul > li {
     display:block;
-    width:250px;
+    width: 200px;
 }
 
 nav ul, nav li {
     outline: 0;
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    width:25px;
+    height:25px;
+    padding: 3px;
+}
+
+.icon-wrap {
+    position:relative;
+    display:table-cell;
+    width: 70px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.navtext {
+    position:relative;
+    display:table-cell;
+    vertical-align:middle;
+    font-family: 'Titillium Web', sans-serif;
+    width: 190px;
+}
+
+nav > ul > li {
+    
+}
+
+.li-wrap {
+    position: relative;
+    display:table;
+    border-collapse:collapse;
+    border-spacing:0;
+    color:#999;
+    font-family: arial;
+    font-size: 14px;
+    text-decoration:none;
+    -webkit-transform:translateZ(0) scale(1,1);
+    -webkit-transition:all .1s linear;
+    transition:all .1s linear;
+    margin: 3px 0 0 0;
 }

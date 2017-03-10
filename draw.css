@@ -15,6 +15,10 @@ body {
     display: inline-block;
     height:100%;
     border-right:1px solid #e5e5e5;
+    
+}
+
+.selector, .second-menu {
     background-color: #f5f5f5;
 }
 
@@ -36,6 +40,15 @@ li {
 .first-menu:hover, .second-menu > li:hover, .only-menu:hover {
     background-color: #5fa2db;
     cursor: pointer;
+}
+
+.second-menu > li {
+    padding: 7px 9px 7px 9px;
+    border-bottom: 1px solid black;
+}
+
+.second-menu > li:last-child {
+    border-bottom: none;
 }
 
 .first-menu:hover > .li-wrap > .navtext,
@@ -63,7 +76,6 @@ ul > .active {
     top: 0;
     display: none;
     border: 1px solid #0082e7;
-    padding: 5px;
 }
 
 .first-menu:hover ul, .more:hover ul {

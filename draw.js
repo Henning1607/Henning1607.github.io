@@ -1,3 +1,21 @@
+/**
+ * TODO:
+ * 
+ * Features:
+ * Eraser
+ * Upload a pic
+ * Create shapes
+ * Save settings
+ * Pattern on just the stroke
+ * 
+ * Bugfixes:
+ * All active elements should be highlighted from page load
+ * Reset options does not change active highlights
+ * Needs to be a line, nothing happens when the user clicks
+ * Slider/slidervalue doesnt get updated after randomLineWidth is unchecked
+ * 
+ */
+
 //Canvas elements
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
@@ -80,6 +98,7 @@ function updateReset (){
 
 //Removes/adds highlighted options on the menu
 function GCOcolor(active) {
+    console.log(active.classList.toString());
     var classArray = [];
     Array.prototype.forEach.call(active.classList, child => {
         classArray = [child];

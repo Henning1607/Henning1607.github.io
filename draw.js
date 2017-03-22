@@ -9,10 +9,7 @@
  * Pattern on just the stroke
  * 
  * Bugfixes:
- * All active elements should be highlighted from page load
- * Reset options does not change active highlights
- * Needs to be a line, nothing happens when the user clicks
- * Slider/slidervalue doesnt get updated after randomLineWidth is unchecked
+ * - 
  * 
  */
 
@@ -37,10 +34,12 @@ const transparencySlider = document.querySelector('#transparencySlider');
 const colorpickerslider = document.querySelector('#colorpickerslider');
 const fillcolorslider = document.querySelector('#fillcolorslider');
 
+console.log(lineWidthSlider.value);
+
 canvas.width = window.innerWidth - 4; /*Fix later */
 canvas.height = window.innerHeight -4; /*Fix later */
 
-ctx.strokeStyle = '#BADA55';
+ctx.strokeStyle = '#000';
 ctx.lineJoin = 'miter';
 ctx.lineCap = 'round';
 ctx.lineWidth = 10;
@@ -94,11 +93,14 @@ function updateReset (){
     lineWidthSlider.disabled = false;
     randomWidth.checked = false;
     transparencySlider.value = 1;
+    blendingBtn.item(0).classList +=" active";
+    colorBtn.item(0).classList +=" active";
+    lineJoinBtn.item(0).classList +=" active";
+    lineCapBtn.item(0).classList +=" active";
 }
 
 //Removes/adds highlighted options on the menu
 function GCOcolor(active) {
-    console.log(active.classList.toString());
     var classArray = [];
     Array.prototype.forEach.call(active.classList, child => {
         classArray = [child];
@@ -155,6 +157,7 @@ randomWidth.addEventListener('change',() =>{
         lineWidthSlider.disabled = true;
     } else {
         lineWidthSlider.disabled = false;
+        ctx.lineWidth = lineWidthSlider.value;
     }
 });
 

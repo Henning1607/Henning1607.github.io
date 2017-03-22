@@ -130,7 +130,6 @@ function changeColor(){
             fillcolorslider.addEventListener("change",(value) => {
                 ctx.fillStyle = document.getElementById("fillcolorslider").value;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                GCOcolor(this);
             });
     }
 }
@@ -141,6 +140,7 @@ canvas.addEventListener('mousedown', (e) => {
 });
 //Canvas elements
 canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mousedown', draw);
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
 

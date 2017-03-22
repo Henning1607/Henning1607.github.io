@@ -44,7 +44,7 @@ li {
 
 .second-menu > li {
     padding: 7px 9px 7px 9px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ddd8d8;
 }
 
 .second-menu > li:last-child {
@@ -136,10 +136,6 @@ nav ul, nav li {
     vertical-align:middle;
     font-family: 'Titillium Web', sans-serif;
     width: 190px;
-}
-
-nav > ul > li {
-    
 }
 
 .li-wrap {

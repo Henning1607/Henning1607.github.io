@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="draw.css">
 </head>
 <body>
-    <canvas id="draw" width="800" height="800"></canvas>
+    <canvas id="draw" width="800" height="800">Your browser does not support HTML5 canvas.</canvas>
+    <div class="errorMsg" id="errorBox">Her står det en feilmelding</div>
     <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
     <label for="nav-trigger"></label>
     <div class="selector">
@@ -107,10 +108,10 @@
                         <span class="navtext">Color</span>
                         <ul class="second-menu">
                             <li id="colorpicker" class="colorBtn">
-                                <input id="colorpickerslider" type="color" value="#BADA55"></li>
+                                <input id="colorpickerslider" type="color" value="#000000"></li>
                             <li id="rainbow" class="colorBtn">Rainbow</li>
                             <li id="fillscreen" class="colorBtn">Fill entire screen
-                                <input id="fillcolorslider" type="color" value="#BADA55">
+                                <input id="fillcolorslider" type="color" value="#ffffff">
                             </li>
                         </ul>
                     </div>
@@ -163,7 +164,23 @@
                         <span class="navtext">Save canvas as image</span>
                         <!-- Probably not needed
                             <ul>Right click > "save image as..."</ul>-->
+                    </div>
+                </li>
+                <li class="save first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/003-save.png" class="icon">
                         </div>
+                        <span class="navtext">Save canvas</span>
+                    </div>
+                </li>
+                <li class="load first-menu">
+                    <div class="li-wrap">
+                        <div class="icon-wrap">
+                            <img src="Icons/003-save.png" class="icon">
+                        </div>
+                        <span class="navtext">Load canvas</span>
+                    </div>
                 </li>
             </ul>
         </nav>

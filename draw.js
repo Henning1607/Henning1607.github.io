@@ -2,14 +2,14 @@
  * TODO:
  * 
  * Features:
- * Eraser
  * Upload a pic
  * Create shapes
  * Save settings
  * Pattern on just the stroke
+ * Color on the message function
  * 
  * Bugfixes:
- * - 
+ * Message sometimes show up blurry
  * 
  */
 
@@ -27,6 +27,8 @@ const lineJoinBtn = document.querySelectorAll('.lineJoinBtn');
 const lineCapBtn = document.querySelectorAll('.lineCapBtn');
 const saveImage = document.querySelector('.saveImage');
 const randomPattern = document.querySelector('.patternBtn');
+const saveCanvas = document.querySelector('.save');
+const loadCanvas = document.querySelector('.load');
 
 //Sliders, colorpicker
 const lineWidthSlider = document.querySelector('#lineWidthSlider');
@@ -54,6 +56,7 @@ let direction = true;
 let isRainbow = false;
 let randomLineWidth = false;
 let patternNum = 1;
+var img;
 
 function draw(e) {
     if (!isDrawing) return; // stop the function from running when they are not moused down
@@ -136,6 +139,17 @@ function changeColor(){
     }
 }
 
+function message(message){
+    var errorMsg = document.getElementById("errorBox");
+    errorMsg.style.display = "block";
+    errorMsg.innerHTML = message;
+    errorMsg.style.webkitAnimation = "none";
+    setTimeout(function() {
+        errorMsg.style.webkitAnimation = '';
+    }, 10);
+    setTimeout(function(){ errorMsg.style.display = "none"; }, 2500);
+}
+
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
@@ -166,13 +180,14 @@ resetOpt.addEventListener('click', () =>{
     isRainbow = false;
     randomLineWidth = false;
     patternNum = 1;
-    ctx.strokeStyle = '#BADA55';
+    ctx.strokeStyle = '#000000';
     ctx.lineJoin = 'miter';
     ctx.lineCap = 'round';
     ctx.lineWidth = 10;
     ctx.globalCompositeOperation = 'source-over';
     ctx.globalAlpha = '1';
     updateReset();
+    message("Settings reset");
     //Actives on menu elements
 });
 
@@ -182,6 +197,7 @@ blendingBtn.forEach(button => button.addEventListener('click', function(){
 }));
 
 colorBtn.forEach(button => button.addEventListener('click', changeColor));
+
 lineJoinBtn.forEach(blendButton => blendButton.addEventListener('click', function(){
     ctx.lineJoin = this.id;
     GCOcolor(this);
@@ -195,7 +211,7 @@ lineCapBtn.forEach(lineCapButton => lineCapButton.addEventListener('click', func
 //Opens a new window with the canvas as a PNG image
 saveImage.addEventListener('click',() => {
     var canvas = document.getElementById("draw");
-    var img    = canvas.toDataURL("image/png");
+    var img = canvas.toDataURL("image/png", 1.0);
     document.write('<img src="'+img+'"/>');
 })
 
@@ -219,6 +235,24 @@ lineWidthSlider.addEventListener('change', function(){
 
 transparencySlider.addEventListener('change', function(){
     ctx.globalAlpha = this.value;
+});
+
+saveCanvas.addEventListener('click', function(){
+    localStorage.setItem(canvas, canvas.toDataURL());
+});
+
+loadCanvas.addEventListener('click', function(){
+    if(!localStorage.getItem(canvas)){
+        message("No image saved");
+        return;
+    }
+    var dataURL = localStorage.getItem(canvas);
+    var img = new Image;
+    img.src = dataURL;
+    img.onload = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+    };
 });
 
 window.onload = updateReset;

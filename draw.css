@@ -62,7 +62,8 @@ li:hover,
 }
 
 ul > .active {
-    background-color: yellow;
+    background-color: #9e9999;
+    color: beige;
 }
 
 .selector ul li {

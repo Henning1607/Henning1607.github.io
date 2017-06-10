@@ -1,0 +1,248 @@
+/*CSS kodene som er felles for alle sider, knyttet til index.php*/
+body {
+    background: -webkit-linear-gradient(grey, white); /* For Safari */
+    background: -o-linear-gradient(grey, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(grey, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(grey, white); /* Standard syntax */
+
+}
+
+header, nav, article, aside, footer, map, form{
+    display: block;
+    font-family:Arial,Helvetica,sans-serif;
+    
+}
+
+#center {
+    margin: auto;
+    margin-top: -20px;
+    padding-top: 20px;
+    width: 1000px;
+    background-color: white;
+    box-shadow: 0px 0px 20px black;
+    position: relative;
+    
+}
+#faceimg {
+    float: right;
+    padding-right: 10px;
+   
+}
+nav a {
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    background: linear-gradient(#406ba7,#0d284e);
+    text-indent:0;
+    border:1px solid #474AEA;
+    border-bottom: none;    
+    display:inline-block;
+    color:#ffffff;
+    
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #1570cd;
+
+}
+
+nav a:active {
+    position:relative;
+    top:1px;
+    
+}
+
+nav a:hover {
+    text-decoration: underline;
+    background: linear-gradient(#406ba7,#3d94f6); /* Standard syntax */
+    border:1px solid #337fed;
+    border-bottom: none;
+    
+}
+
+nav li {
+    float: left;
+    width: 200px;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+nav a:link, nav a:visited {
+    width: 158px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    
+}
+
+#footer {
+    background:linear-gradient(#406ba7,#0d284e);
+    color:white;
+    max-height: 150px;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+    position:static;
+    bottom:0;
+    
+    
+    
+}
+#alien, #alien2, #venus{
+	display: none;
+        
+}
+
+
+
+/*Resten av koden går til hver enkel del*/
+article {
+    padding: 15px;
+    min-height: 300px;
+    position: relative;
+    
+}
+
+	/*CSS til kart.html*/
+#map {
+    margin: 50px auto 0 auto;
+    width: 500px;
+    height: 500px;
+    margin-right: 0;
+    
+   
+}
+#venstre{
+        margin-left: 0;
+        position: absolute;
+}
+
+	/*CSS til treningsprogram.html*/
+#trening{
+	width:970px;
+	height:550px;
+	overflow:scroll;
+}
+
+
+	/* CSS til kosthold.html*/
+#headerkosthold {
+    color:#101E50;
+    padding: 10px;
+    
+}
+#top {
+    border-bottom: 1px solid blue;
+    text-align: center;
+    margin: 0px -10px 0 -10px;
+    background: linear-gradient(#406ba7,#0d284e);
+    padding: 5px 0 5px 0;
+    border-radius: 5px;
+    color: #ffffff; 
+    
+}
+.gjemt {
+    display: none;
+    
+}
+
+.gjemt th, .gjemt tr, .gjemt td {
+    border:1px solid black;
+    
+}
+
+.gjemt td {
+    padding:5px;
+    
+}
+#kostfolkbilde {
+    float: right;
+    padding-left: 10px;
+    
+}
+
+	/*CSS til omoss.html*/
+
+#mailtekst {
+    padding: 15px;
+    
+}
+
+#mea,#ksenia, #kristian ,#henning{
+    border: 1px solid #474AEA;
+    margin: 10px;
+    width: 300px;
+    background: linear-gradient(#ffffff, #cccccc);
+    display: inline-block;
+    padding-left: 5px;
+
+}
+
+#kontaktoss{
+	
+	
+}
+
+button, #inputbutton {
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    background: linear-gradient(#406ba7,#0d284e);
+    text-indent:0;
+    border:1px solid #474AEA;
+    border-bottom: none;    
+    display:inline-block;
+    color:#ffffff;
+    
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    text-decoration:none;
+    text-align:center;
+
+}
+
+	/*CSS til forsiden.html*/
+#forsidebilde {
+	margin:0 0 0 -32px ;
+	width:955px;
+}
+
+td header {
+    background: linear-gradient(#406ba7,#3d94f6);
+    color:#ffffff;
+    padding: 1px;
+    text-align: center;
+    box-shadow: 1px 1px 3px black;
+    
+}
+td footer{
+	text-align: right;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    border-color: gray;
+    
+}
+
+table td {
+    padding: 5px;
+    vertical-align: top;
+    
+}
+
+td p {
+    padding: 0 5px 0 5px;
+    
+}
+img {
+    border: none;
+    
+}

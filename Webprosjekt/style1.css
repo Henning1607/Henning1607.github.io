@@ -1,0 +1,8 @@
+aside {
+        box-shadow: 1px 1px 5px black;
+        right: 120px;
+        border-radius: 5px;
+        width: 36%;
+        padding: 0 10px 10px 10px;
+        position: fixed;
+}

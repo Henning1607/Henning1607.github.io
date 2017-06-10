@@ -1,0 +1,106 @@
+    <article>
+        <div id="mea">
+            <figure id="meabilde">
+                <img src="bilder/Mea.jpg" alt="Bilde av Mea" height="200">
+            </figure>
+            <p>Navn: Mea Alvsaker</p>
+            <p>Alder : 19 </p>
+            <p>Studie: Data Ingeniør</p></div>
+        <div id ="ksenia">
+            <figure id="kseniabilde">
+                <img src="bilder/Ksenia.jpg" alt="Bilde av Ksenia" height="200">
+            </figure>
+            <p>Navn: Ksenia Iablokova</p>
+            <p>Alder : 25</p>
+            <p>Studie: Data Ingeniør</p></div>
+        <div id ="kristian">
+            <figure id="kristianbilde">
+                <img src="bilder/Kristian.jpg" alt="Bilde av Kristian" height="200">
+            </figure>
+            <p>Navn: Kristian Grande</p>
+            <p>Alder : 21</p>
+            <p>Studie: Anvendt datateknologi</p>
+        </div>
+        <div id="henning">
+            <figure id="henningbilde">
+                <img src="bilder/Henning.jpg" alt="Bilde av Henning" height="200">
+            </figure>
+            <p>Navn: Henning Corneliussen</p>
+            <p>Alder : 23 </p>
+            <p>Studie: Anvendt datateknologi </p>
+        </div>
+
+        <form method="post" id="kontaktoss">
+
+                <table>
+
+                        <tr><td>Fornavn:</td>
+                        <td><input type="text" name="fornavn" /></td></tr>
+                        <tr><td>Etternavn:</td>
+                        <td><input type="text" name="etternavn" /></td></tr>
+                        <tr><td>E-post:</td>
+                        <td><input type="text" name="epost"/></td></tr>
+                        <tr><td>Telefonnummer:</td>
+                        <td><input type="text" name="telefonnummer" /></td></tr>
+                        <tr><td>Hendvendelse:</td>
+                        <td><textarea name="hendvendelse" cols="50"></textarea></td></tr>
+                        <tr><td><input type="submit" name="Send" value="Send" id="inputbutton"/></td></tr>
+                </table>
+                </form>
+<?php
+        if (isset($_REQUEST["Send"])){
+             $fornavn = $_REQUEST["fornavn"];
+             $etternavn = $_REQUEST["etternavn"];
+             $epost = $_REQUEST["epost"];
+             $telefonnummer = $_REQUEST["telefonnummer"];
+             $hendvendelse = $_REQUEST["hendvendelse"];
+
+           if($fornavn!="" and $etternavn!=""){
+            echo "Ditt navn er : $fornavn $etternavn<br>";
+                                      }
+    else{
+        echo "Du må fylle inn fornavn og etternavn <br>";
+    }
+          if ($epost!=""){
+            echo "Din epost er : $epost<br>";
+        }
+        else
+        {
+            echo "Du må fylle inn epost !<br>";
+        }
+        if ($telefonnummer!=""){
+            echo "Ditt telefonnummer er : $telefonnummer<br>";
+        }
+        else {
+            echo "Du må fylle inn telefonnummer</br>";
+        }
+        if($hendvendelse!=""){
+            echo "Din hendvendelse : <br>$hendvendelse<br>";
+        }
+        else{
+            echo "Du må fylle inn hendvendelse</br>";
+        }
+
+        if (isset($_REQUEST["Send"]))
+        {
+
+                $filref =  fopen("test.txt", "a");
+                fwrite($filref,"Fornavn: ". $_REQUEST["fornavn"]."\r\n");
+                fwrite($filref,"Etternavn:". $_REQUEST["etternavn"]."\r\n");
+                fwrite($filref,"E-post:". $_REQUEST["epost"]."\r\n");
+                fwrite($filref,"Telefonnummer:". $_REQUEST["telefonnummer"]."\r\n");
+                fwrite($filref,"Hendvendelse:". $_REQUEST["hendvendelse"]."\r\n");
+                fclose($filref);
+            $epost_melding = "Navn: " .$_POST["fornavn"]." ". $_POST["etternavn"]."\n";
+            $epost_melding .= "Epost: ".$_POST["epost"]."\n";
+            $epost_melding .= "Telefon: ".$_POST["telefonnummer"]."\n";
+            $epost_melding .= "Hendvendelse: ".$_POST["hendvendelse"]."\n";
+            echo "<hr>";
+           $tilemail = "kristian_grande@hotmail.com";
+            mail($tilemail,"Hendvendelse",$epost_melding);
+            echo "<strong>Epost er sendt med din hendvendelse<br></strong>";
+        }
+        }
+
+?>
+    </article>

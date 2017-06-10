@@ -13,7 +13,9 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="lesmer.js"></script>
         <script type="text/javascript" src="alien.js"></script>
-        <script src="https://www.w3schools.com/lib/w3.js"></script> 
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script src="treningsprogram.js" type="text/javascript"></script>
+        <script type="text/javascript" src='external_code.js'></script>
     </head>
     <body>
         <div id="center">
@@ -23,13 +25,45 @@
             </header>
             <nav>
                 <ul>
-                    <li><a href="index.php">FORSIDE</a></li>
-                    <li><a href="index.php?page=1">STYRKETRENING</a></li>
-                    <li><a href="index.php?page=2">KOSTHOLD</a></li>
-                    <li><a href="index.php?page=3">KART</a></li>
-                    <li><a href="index.php?page=4">OM OSS</a></li>
+                    <li class="menu-item" id="1"><a href="#">FORSIDE</a></li>
+                    <li class="menu-item" id="2"><a href="#">STYRKETRENING</a></li>
+                    <li class="menu-item" id="3"><a href="#">KOSTHOLD</a></li>
+                    <li class="menu-item" id="4"><a href="#">KART</a></li>
+                    <li class="menu-item" id="5"><a href="#">OM OSS</a></li>
                 </ul>
             </nav>
+            <div id="w3-include" w3-include-html="forside.html"></div>
+            <script>
+                const menu = document.querySelectorAll(".menu-item");
+                menu.forEach(button => button.addEventListener('click', menuFunc));
+
+                function menuFunc(){
+                    var menuInclude = document.getElementById("w3-include");
+                    switch(this.id){
+                        case "1":
+                            menuInclude.setAttribute("w3-include-html", "forside.html");
+                            w3.includeHTML();
+                            break;
+                        case "2":
+                            menuInclude.setAttribute("w3-include-html", "treningsprogram.html");
+                            w3.includeHTML();
+                            break;
+                        case "3":
+                            menuInclude.setAttribute("w3-include-html", "kosthold.html");
+                            w3.includeHTML();
+                            break;
+                        case "4":
+                            menuInclude.setAttribute("w3-include-html", "kart.html");
+                            w3.includeHTML();
+                            break;
+                        case "5":
+                            menuInclude.setAttribute("w3-include-html", "omoss.html");
+                            w3.includeHTML();
+                            break;
+                    }
+                }
+                w3.includeHTML();
+            </script>
             <footer id="footer">
                     <p>Laget av: Mea Alvsaker, Ksenia Iablokova, Kristian Grande, Henning Corneliussen</p>
             </footer>

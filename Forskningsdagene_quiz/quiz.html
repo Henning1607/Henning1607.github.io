@@ -1,0 +1,312 @@
+<!--
+Made by Henning Corneliussen in cooperation with
+HiOA for Forskningsdagene 2016
+**********
+TODO/problemer:
+**********
+- Engelsk/Norsk
+- Bildene må justeres
+- Ser litt "tomt" ut?
+- Testing
+- Spørsmål
+**********
+**********
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forskningsdagene 2016</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="forskningstyle.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    </head>
+    <body id="body">
+
+        <div id="gradients">
+            <div id="gradienthappy2" class="gradient"></div>
+            <div id="gradienthappy" class="gradient"></div>
+            <div id="gradientsad" class="gradient"></div>
+            <div id="gradientsad2" class="gradient"></div>
+        </div>
+
+        <div id="hattext">
+            <div id="whitetext">
+                <div>
+                    <div class="hattcontent">
+                        <img src="bilder/noytral0.75nr2.png" alt="" class="hattbilde">
+                        <span class="header">Black hat</span>
+                    </div>
+                </div>
+                <ul class="liste">
+                    <li>Violates computer security for maliciousness or personal gain</li>
+                    <li>Unauthorized use and access of systems and computers</li>
+                    <li>Tries to exploit systems</li>
+                </ul>
+            </div>
+            <div id="blacktext">
+                <div>
+                    <div class="hattcontent">
+                        <img src="bilder/noytral0.75.png" alt="" class="hattbilde">
+                        <span class="header">White hat</span>
+                    </div>
+                </div>
+                <ul class="liste">
+                    <li>Violates computer security to exploit weaknesses</li>
+                    <li>Authroized use and access of systems and computers</li>
+                    <li>Tries to fix exploits that are discovered</li>
+                </ul>
+            </div>
+            <br style="clear:both;"/>
+        </div>
+
+        <div id="nyttSpill">
+            <div id="nyttSpillText">Press one of the buttons to start the quiz</div>
+            <div id="circle1"></div>
+            <div id="circle2"></div>
+        </div>
+
+        <div id="ferdig">
+            <div id="ferdigText"></div>
+        </div>
+
+        <div id="ramme">
+            <div id="spmRamme">
+                <div id="sporsmal"></div>
+            </div>
+            <div id="antallRamme">
+                <p id="antallSpm"></p>
+            </div>
+        </div>
+
+        <div id="divbilde">
+            <img src="bilder/noytral.png" alt="Bilde av hacking" class="bilde" id="noytral">
+            <img src="bilder/noytral0.75nr1.png" alt="Bilde av hacking" class="bilde" id="sad">
+            <img src="bilder/noytral0.75nr2.png" alt="Bilde av hacking" class="bilde" id="sad2">
+            <img src="bilder/noytral0.5.png" alt="Bilde av hacking" class="bilde" id="happy">
+            <img src="bilder/noytral0.75.png" alt="Bilde av hacking" class="bilde" id="happy2">
+        </div>
+
+        <div>
+            <img src="bilder/hioa_logo_250px_original_no.png" alt="Bilde av hacking" id="hioa" height="150" width="150">
+        </div>
+
+        <script type="text/javascript">
+            var ethics = 0;
+            $("#ferdig").hide();
+            $("body").hide();
+            $("#nyttSpill").hide();
+            randomSpm(3);
+
+            $(document).ready(function() {
+                var tall = 0;
+                $("body").fadeIn(3000);
+                $("body").fadeIn(3000, function(){
+                    //Waits for the site to finish loading before a button can be pressed
+                    //Code for keypress. This is the X key.
+                    $(document).bind('keydown',function(e){
+                       if(e.keyCode === 88) {
+                           tall++;
+                           //Prevents the buttons doing anything after quiz has ended
+                           if(tall <= 10){
+                               //Answer "Yes"
+                               randomSpm(1);
+                           }
+                       }
+                    });
+
+                    //Code for keypress. This is the C key.
+                    $(document).bind('keydown',function(e){
+                       if(e.keyCode === 67) {
+                           tall++;
+                           //Prevents the buttons doing anything after quiz has ended
+                           if(tall <= 10){
+                               //Answer "No"
+                               randomSpm(2);
+                           }
+                       }
+                    });
+                });
+            });
+
+            /*Changes the background gradient*/
+            function fargeEndre(value){
+                //Value === 1 is positive case.
+                //Value === 2 is negative case.
+                if(value === 1){
+                    if(ethics < 2) ethics ++;
+                }else if(value === 2){
+                    if(ethics > -2) ethics --;
+                }
+                $("#sad2").css("opacity","0");
+                $("#sad").css("opacity","0");
+                $("#noytral").css("opacity","0");
+                $("#happy").css("opacity","0");
+                $("#happy2").css("opacity","0");
+                $("#gradienthappy2").css("opacity","0");
+                $("#gradienthappy").css("opacity","0");
+                $("#gradientsad").css("opacity","0");
+                $("#gradientsad2").css("opacity","0");
+                switch(ethics){
+                    case -2:
+                        $("#gradientsad2").css("opacity","100");
+                        $("#sad2").css("opacity","100");
+                        break;
+                    case -1:
+                        $("#gradientsad").css("opacity","100");
+                        $("#sad").css("opacity","100");
+                        break;
+                    case 0:
+                        $("#noytral").css("opacity","100");
+                        break;
+                    case 1:
+                        $("#gradienthappy").css("opacity","100");
+                        $("#happy").css("opacity","100");
+                        break;
+                    case 2:
+                        $("#gradienthappy2").css("opacity","100");
+                        $("#happy2").css("opacity","100");
+                        break;
+                }
+            }
+
+            var res;
+            var antall;
+
+
+            /*
+             * Lazy fix to global scope problem.
+             */
+            function getAntall(){
+                antall=0;
+                return antall;
+            }
+
+            /*
+             * Random function to get a question.
+             * Tall represents the button that has a negative effect on
+             * on the 'ethic'.
+             * */
+
+            function spm(nr){
+                nr1 = nr;
+                var questions =[
+                    {spm: "You've been asked to fix a friend's phone, do you also look through their pictures?", tall: "Ja"},
+                    {spm: "Can hacking be used for something positive?", tall: "Nei"},
+                    {spm: "When you read your friend’s blog, you discover a section containing their private thoughts. Even though it’s a goldmine for laughs, do you tell them about it?", tall: "Nei"},
+                    {spm: "Would you try to log into someones Facebook if their computer was unlocked?", tall: "Ja"},
+                    {spm: "Is it cool to hack the government?", tall: "Ja"},
+                    {spm: "Would you try to guess the password for someones Facebook account?", tall: "Ja"},
+                    {spm: "If your friend left his computer while logged on to facebook, do you tell him?", tall: "Nei"},
+                    {spm: "Should the government be allowed to hack criminals?", tall: "Ja"},
+                    {spm: "When you visited a government website, you came over a security flaw. Do you send in a tip letting them know about it?", tall: "Nei"},
+                    {spm: "Your school’s database is old and not properly secured, making it possible for students to alter their grades to their liking. Do you tell the school about it, even though you won’t get straight A’s if they fix it?", tall: "Nei"}
+                ];
+                res = questions[nr1];
+                console.log(nr);
+            }
+
+            function randomSpm(val){
+                if(antall < 10 || antall === 0){
+                    sjekkSvar(val);
+                    spm(antall);
+                    $("#sporsmal").fadeOut(1000);
+                    $("#sporsmal").fadeOut(1000, function(){
+                        //Loads after fadeOut animation is complete
+                        $("#sporsmal").html(res.spm);
+                        $("#sporsmal").fadeIn(1000);
+                        if(antall === 10 || antall === 3){
+                            $("#sporsmal").css("font-size","3em");
+                        } else {
+                            $("#sporsmal").css("font-size","4em");
+                        }
+                    });
+                    antall++;
+                    $("#antallSpm").html(antall + " av 10");
+                } else if(antall >= 10) { //User has finished the quiz
+                    sjekkSvar(val);
+                    $("#ramme").hide();
+                    switch(ethics){
+                        case -2:
+                            $("#ferdigText").html("You are Black Hat");
+                            $.post('index.php', {verdi: 2});
+                            break;
+                        case -1:
+                            $("#ferdigText").html("You are Black Hat");
+                            $.post('index.php', {verdi: 2});
+                            break;
+                        case 0:
+                            $("#ferdigText").html("You are a little of both");
+                            $.post('index.php', {verdi: 3});
+                            break;
+                        case 1:
+                            $("#ferdigText").html("You are White Hat");
+                            $.post('index.php', {verdi: 1});
+                            break;
+                        case 2:
+                            $("#ferdigText").html("You are White Hat");
+                            $.post('index.php', {verdi: 1});
+                            break;
+                    }
+                    $("#ferdig").show();
+                    $("#ferdig").fadeIn(1500, function(){
+                        $("#ferdig").animate({
+                            top: '30%',
+                            width: '25%',
+                            height: '5em',
+                            left: '36%'
+                        });
+                    });
+                    $("#nyttSpill").delay(1000).fadeIn(1500);
+                    $("#nyttSpill").delay(1000).fadeIn(1500, function(){
+                        $(document).bind('keydown',function(e){
+                            if(e.keyCode === 67) {
+                               location.reload();
+                            }
+                        });
+
+                        $(document).bind('keydown',function(e){
+                            if(e.keyCode === 88) {
+                               location.reload();
+                            }
+                        });
+                        $("#gradienthappy2").delay(5000).css("opacity","0");
+                        $("#gradienthappy").delay(5000).css("opacity","0");
+                        $("#gradientsad").delay(5000).css("opacity","0");
+                        $("#gradientsad2").delay(5000).css("opacity","0");
+                        $("#divbilde").delay(12000).fadeOut(2000);
+                        $("#ferdig").delay(10500).fadeOut(2000);
+                        $("#nyttSpill").delay(10000).animate({
+                            top: '43%'
+                        }, 3500);
+                    });
+                } else if (!antall){
+                    getAntall();
+                    randomSpm();
+                }
+            }
+
+            /*
+             * Check to se if a variable is set to res.
+             * First time a user runs the quiz, res should be empty.
+             */
+            function sjekkSvar(alt) {
+                if(res){
+                    if(res.tall === "Ja"){ //Negative answer is "Ja"
+                        if(alt === 1){
+                            fargeEndre(2);
+                        } else if(alt === 2) {
+                            fargeEndre(1);
+                        }
+                    } else if(res.tall === "Nei") { //Negative answer is "Nei"
+                        if(alt === 1){
+                            fargeEndre(1);
+                        } else if(alt === 2) {
+                            fargeEndre(2);
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

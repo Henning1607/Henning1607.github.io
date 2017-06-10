@@ -1,0 +1,325 @@
+/* http://paletton.com/#uid=52L0u0keIEd51Wo9ZOpiZv5mVqZ */
+
+html {
+    box-sizing: border-box;
+    font-family: Georgia, serif; 
+    font-weight: 300;
+    font-size: 14px;
+    height: 100%;
+    color:#fff;
+    letter-spacing: .25px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    /*http://colorzilla.com/gradient-editor/#7800f9+0,d907ff+100 */
+    background: #26877A; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #26877A 0%,#CBF1EC 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #26877A 0%,#CBF1EC 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #26877A 0%,#CBF1EC 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-attachment:fixed
+}
+
+header {
+    text-align: center;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 15%;
+    height: 100%;
+}
+
+#wrapper {
+    width:65%;
+    position: absolute;
+    left: 20%;
+    box-shadow: 0px 0px 100px -41px rgba(0,0,0,0.75);
+    background-color: #fff;
+    color: #555;
+    padding-bottom: 20px;
+}
+
+section {
+    padding-top: 20px;
+}
+
+h1 {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.72), 0 0 1px rgba(0, 0, 0, 0.45);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;  
+  flex: 1;
+  padding-bottom: 7px;
+  margin-bottom: 1px;
+  cursor:pointer;
+  max-height: 200px;
+  transition: max-height 0.15s ease-out;
+  
+}
+
+.open {
+    max-height: 700px;
+    transition: max-height 0.25s ease-in;
+}
+
+.row:hover {
+    outline: 1px solid #aaa;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column; 
+}
+
+.storbox {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+hr { 
+    border: 0; 
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 0;
+    color: #fff;
+}
+
+#headtext {
+    padding: 4px;
+}
+
+#headpic {
+    padding-bottom: 5px;
+}
+
+#headpic > img {
+    border-radius: 40px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+#headtext > span {
+    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.72), 0 0 1px rgba(0, 0, 0, 0.45);
+}
+
+.box1, .storbox {
+    padding:3px;
+}
+
+.kol {
+    margin: 0 5px 0 0px;
+    /*background-color: #f9fbff;*/
+    position: relative;
+}
+
+.kol p {
+    margin: 0;
+}
+
+.info { 
+    flex: 3;
+    transition: max-height 2s;
+}
+
+.dato {
+    flex: .7;
+}
+
+.skole { 
+    flex: 2;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    text-align: center;
+    padding: 5px 0 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+h2 > span {
+    position: relative;
+    display: inline-block;
+}
+
+h2 > span:before, h2 > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    height: 1px;
+}
+
+h2 > span:before {
+    right: 100%;
+    margin-right: 15px;
+    background-image: linear-gradient(to right, rgba(85, 85, 85, 0), rgba(85, 85, 85, 0.75), rgba(85, 85, 85, 100));
+}
+
+h2 > span:after {
+    left: 100%;
+    margin-left: 15px;
+    background-image: linear-gradient(to right, rgba(85, 85, 85, 100), rgba(85, 85, 85, 0.75), rgba(85, 85, 85, 0));
+}
+
+.links:link {
+    color: #38d;
+    text-decoration: underline;
+}
+
+.links:visited {
+    color: #38d;
+    text-decoration: underline;
+}
+
+.links:hover {
+    color: #abcef1;
+    text-decoration: underline;
+}
+
+.links:active {
+    text-decoration: underline;
+}
+
+.nedpil {
+    bottom: 0;
+    right: 0;
+    position:absolute;
+}
+
+.nedpil::before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f0ab";
+    font-size: 2em;
+}
+
+.mertekst {
+    display: none;
+}
+span > hr {
+    margin:4px;
+}
+
+.open > div > .nedpil::before {
+    content: "\f0aa";
+}
+
+.nedpil {
+    display:none;
+}
+
+.hidden {
+    display: none;
+}
+
+.open > div > .hidden {
+    display:unset;
+}
+
+/*
+ * Keyframes
+ */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*
+ * CSS Page Transitions
+ */
+.scene_element {
+    animation-duration: 0.25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+.scene_element--fadein {
+    animation-name: fadeIn;
+}
+
+.scene_element--fadeinup {
+    animation-name: fadeInUp;
+}
+
+.scene_element--fadeinright {
+    animation-name: fadeInRight;
+}
+
+table {
+    border-collapse: collapse;
+    margin:0 auto;
+}
+
+th, td {
+    border:1px solid #555;
+}
+
+th, td {
+    padding: 10px;
+}
+
+.rating {
+    font-size: 20px;
+}
+
+.lit::before {
+    content: "\2605";
+    position: absolute;
+    color: #ffcf3e;
+}
+
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+.box2 {
+    display: flex;
+    flex-direction: row;
+}
+
+#test1, #test2 {
+    flex: 1;
+}
+

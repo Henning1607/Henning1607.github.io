@@ -1,0 +1,299 @@
+html {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+}
+
+header {
+    display: block;
+    background: #e32d22;
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    
+}
+
+body {
+    min-width: 930px;
+    color: #4d4f53;
+    background-image: url(IMG/mountains.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #ccc;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#postentitle {
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 30px;
+    color: #fff;
+    padding: .5em 1em 0 1em;
+}
+
+#digititle, #digia {
+    font-size: 1em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3em;
+    padding: .5em 0 0 1em;
+    width: 13em;
+    z-index: 901;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    max-width: 100px;
+    max-height: 40px;
+}
+
+section {
+    display: block;
+    padding-top: 12em;
+    margin: 0 auto;
+    width: 61.5em;
+    background: #fff;
+    background-clip:content-box;
+    min-height: 35em;
+    
+}
+
+#login-form {
+    margin: 0 auto;
+    width: 20em;
+    padding: 3em 4em 6em;
+}
+
+#main-form {
+    background: #fff;
+
+}
+
+h2 {
+    font-size: 2.4em;
+    border: 0;
+    margin: 0 0 .7em;
+    padding: 0;
+    text-align: center;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    color: #4D4F53;
+}
+
+#login-link {
+    margin: 1.8em 0 0;
+    font-size: .93em;
+    text-align: center;
+}
+
+a, span.linked {
+    outline: 0;
+    cursor: pointer;
+    color: #006FB7;
+}
+
+a.link, span.linked {
+    border-bottom: 1px solid #dde1e6;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(221, 225, 230);
+    text-decoration: none;
+}
+
+#login-link span {
+    margin: .4em;
+    padding: 0 .3em;
+    color: #919195;
+
+}
+
+#login-methode {
+    border: 1px solid #dde1e6;
+    width: 100%;
+    margin-top: 1.4em;
+}
+
+.first {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 100%;
+    color: #4D4F53;
+    padding: 1.2em;
+    height: 7em;
+    margin: 0;
+    font-size: .9em;
+    line-height: 1.3;
+    text-decoration: none;
+    
+}
+
+.linked {
+    outline: 0;
+    cursor: pointer;
+    color: #006FB7;
+    
+}
+
+.img-idporten {
+    background-image: url(IMG/idporten.png);
+    margin-right: 1em;
+    float: left;
+    height: 3em;
+    width: 3em;
+    margin-top: .2em;
+    text-indent: -999em;
+    
+}
+
+#passord-form, #fnummer-form {
+    float: left;
+    clear: both;
+    width: 100%;
+    position: relative;
+
+}
+
+#passord, #fnummer {
+    color: #4d4f53;
+    margin: 0;
+    padding: 0 0 .5em;
+    display: block;
+    text-align: left;
+    width: 100%;
+    float: left;
+    clear: both;
+}
+
+
+
+.inputfield {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 2.2em;
+    display: block;
+    margin: 0 0 .7em;
+    font-size: 1.2em;
+    color: #4d4f53;
+    padding: .6em;
+    border: 2px solid #dde1e6;
+    font-weight: 400;
+    
+}
+
+.feilmld{
+    font-size: 1.5em;
+    color: #009933;    
+}
+
+.feil {
+    background-color: #fff;
+    padding: .7em 0em .7em 2.2em;
+    margin-top: .4em;
+    margin-bottom: .8em;
+    position: relative;
+    font-size: 1em;
+    border: 2px solid #fdbb2f;
+    margin: 0 auto;
+}
+
+.felter {
+    margin-bottom: .8em;
+}
+
+.inputfield:focus {
+    border: 2px solid #42BBE3;
+}
+
+.submit-login {
+    width: 100%;
+    padding: 7px 20px 8px;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -.01em;
+    color: #fff;
+    border: 0;
+    line-height: 1.5;
+    font-size: 15px;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(top,#ec3a29,#c52115); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top,#ec3a29,#c52115); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top,#ec3a29,#c52115); /* For Firefox 3.6 to 15 */
+    background-image: linear-gradient(to bottom,#ec3a29,#c52115); /* Standard syntax */
+    
+}
+
+.submit-login:hover, .submit-login:focus {
+    text-decoration: none;
+    cursor:pointer;
+    color: #fff;
+    background-color: #fa2d16;
+    outline: 0;
+    backface-visibility: hidden;
+    background: -webkit-linear-gradient(top,#e2301f,#bb1a0c); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top,#e2301f,#bb1a0c); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top,#e2301f,#bb1a0c); /* For Firefox 3.6 to 15 */
+    background-image: linear-gradient(to bottom,#e2301f,#bb1a0c); /* Standard syntax */
+}
+
+#feil {
+    color:#009933;
+    text-align: center;
+    font-size: 1.5em;
+    border: 1px dotted black;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.clear {
+    clear:both;
+    
+}
+
+#glemt{
+    background:none!important;
+    border:none; 
+    padding:0!important;
+    font: inherit;
+    color: #006FB7;
+    border-bottom: 1px solid #dde1e6;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(221, 225, 230);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        min-width: 100%;
+        margin: 0px;
+    }
+    
+    section {
+        width: 100%;
+        padding-top: 3em;
+        
+    }
+    
+    #login-form {
+        width: 90%;
+        padding: 3em 0em 6em;
+    }
+    
+    .aA {
+        display:none;
+    }
+    
+}

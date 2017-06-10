@@ -1,0 +1,253 @@
+html {
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    padding: 0;
+    height: 100%;
+    font-size: 10px;
+    color: #4d4f53;
+    background: #fff;
+}
+
+header h1 {
+    position: absolute;
+    left: 2em;
+}
+
+header {
+    display: block;
+    background: #e32d22;
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    top: 0;
+    left: 0;
+    z-index: 900;
+}
+
+header ul {
+    font-size: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: 150px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+header li {
+    display: inline;
+    text-align: -webkit-match-parent;
+}
+
+header ul a {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 17px 15px;
+    margin: 0;
+    float: left;
+    text-decoration: none;
+    text-shadow: none;
+    border-top: .3em solid transparent;
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+
+.img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(IMG/digipost-new.png);
+    display: inline-block;
+    width: 107px;
+    height: 28px;
+    text-indent: -999em;
+}
+
+.end {
+    position: absolute;
+    top: .9em;
+    right: 2em;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+header ul a:hover, header ul a:active {
+    border-color: #fff;
+}
+
+/*
+#postentitle {
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 30px;
+    color: #fff;
+    padding: .5em 1em 0 1em;
+}
+
+#digititle, #digia {
+    font-size: 1em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3em;
+    padding: .5em 0 0 1em;
+    width: 13em;
+    z-index: 901;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    max-width: 100px;
+    max-height: 40px;
+}*/
+
+section.content {
+    max-width: 80em;
+    padding: 10em;
+    margin: 0 auto;
+}
+
+section {
+    position: relative;
+    background: #fff;
+}
+
+.paper {
+    background: #f6f6f7;
+    padding: 7em 7em 5em;
+    margin: 0 0 2em;
+}
+
+.half {
+    float: left;
+    width: 48%;
+}
+
+.half-last {
+    float: right;
+}
+
+html body .clear {
+    clear: both;
+}
+
+h3 {
+    font-size: 2em;
+    line-height: 1.5;
+    color: #323538;
+    margin: 0 0 1em;
+}
+
+.paper ul {
+    font-size: 1.4em;
+    margin: 1em 1.5em;
+}
+
+ul, ol, p {
+    line-height: 1.5;
+}
+
+.paper p {
+    font-size: 1.4em;
+    margin: 0 0 1em;
+}
+
+.items {
+    font-size: 1.3em;
+    margin-top: -.5em;
+}
+
+.items .item {
+    position: relative;
+    line-height: 1.7;
+    padding: .5em 0 .5em 2em;
+    margin: 0 0 .1em;
+}
+
+.fa-thumbs-up {
+    display: inline-block;
+    background-image: url("IMG/checked-green.png")
+}
+
+.fa-thumbs-down {
+    display: inline-block;
+    background: url("IMG/x-red.png")
+}
+
+.items .item img {
+    position: absolute;
+    top: 13px;
+    left: 0;
+}
+
+#postentitle {
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 30px;
+    color: #fff;
+    padding: .5em 1em 0 1em;
+}
+
+#digititle, #digia {
+    font-size: 1em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3em;
+    padding: .5em 0 0 1em;
+    width: 13em;
+    z-index: 901;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    max-width: 100px;
+    max-height: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        min-width: 100%;
+        margin: 0px;
+    }
+    
+    section {
+        width: 100%;
+        padding-top: 3em;
+        
+    }
+    
+    .aA {
+        display:none;
+    }
+    
+    section.content {
+        padding: 0;
+    }
+    
+    .paper {
+        padding: 7em 2em 0em;
+    }
+    
+}

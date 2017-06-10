@@ -1,0 +1,507 @@
+html {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: #eceef1;
+}
+
+body {
+    min-width: 930px;
+    color: #4d4f53;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    margin: 8px;
+    
+}
+
+header {
+    display: block;
+    background: #e32d22;
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    
+}
+
+#postentitle {
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 30px;
+    color: #fff;
+    padding: .5em 1em 0 1em;
+}
+
+#digititle a {
+    font-size: 1em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3em;
+    padding: .5em 0 0 1em;
+    width: 13em;
+    z-index: 901;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    max-width: 100px;
+    max-height: 40px;
+}
+
+section {
+    padding-top: 8em;
+    margin: 0 auto;
+    width: 61.5em;
+    
+}
+
+#sprak {
+    margin-bottom: 2em;
+    
+}
+
+.button {
+    background-color: #fff;
+    margin-left: 0;
+    margin-right: .5em;
+    margin-bottom: 7px;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    display: inline-block;
+    font: 13.3333px Arial;
+    color: #4D4F53;
+    width: 60px;
+    word-spacing: normal;
+    text-align: center;
+}
+
+.active {
+    background-color: #4d4f53;
+    color: #fff;
+}
+
+#progressbox {
+    height: 3em;
+    margin-bottom: 2em;
+}
+
+#progressbox p.text-active {
+    color: #999;
+    width: 33.3%;
+    float: left;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    margin-bottom: .5em;
+    color: #4D4F53;
+}
+
+#progressbox p.text-inactive {
+    color: #999;
+    width: 33.3%;
+    float: left;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    margin-bottom: .5em;
+    
+}
+
+#progressbar {
+    background-color: #fff;
+    width: 100%;
+    height: .5em;
+    float: left;
+    
+}
+
+#progress {
+    background-color: #4D4F53;
+    width: 32.5%;
+    height: 100%;
+    float: left;
+    
+}
+
+form {
+    padding-bottom: 5em;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#poster {
+    padding: 2em;
+    
+}
+
+
+
+li {
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    font-size: 1em;
+    letter-spacing: 0;
+}
+
+ul, li {
+    padding: 8px;
+    float: left;
+}
+#pil{
+    float: right;
+    margin-top: -0.1em;
+}
+.box {
+    position: relative;
+    background: #f6f6f7;
+    border: 0;
+    padding: 2em 2em 1em;
+    margin-bottom: 2em;
+    background: #fff;   
+}
+
+
+#intro{
+    text-align: center;
+}
+#bankid-bilde{    
+    position: absolute;
+}
+#tekst{
+    text-align: center;
+}
+#EK{
+    font-size: 0.7em;
+    text-align: center;
+}
+
+
+#bankid{    
+    margin: 0 Auto;
+    font-size: 1.5em;
+    padding: 1em 2em 1em;
+    background: #eceef1;
+    width: 30em;
+}
+
+#innerbox{
+    margin: 0 Auto;
+    font-size: 1.5em;
+    padding: 0.5em 2em 1em;
+    background: #fff;
+    width: 11em;
+    border: 1px solid black;
+}
+#mainbox{
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-bottom: 1.5em;
+    width: 11.8em;
+    position: static;
+}
+#topbox{
+    background: url(IMG/BIikon.PNG) no-repeat;
+    padding-left: 100px;
+    font-size: 20px;
+    width: 86%;
+}
+#bottombox{
+    font-size: 15px;
+    background: url(IMG/serfikon.PNG) no-repeat;
+    padding-left: 30px;
+}
+
+#FnR{
+    background: url(IMG/ikonBI.PNG) no-repeat;
+    padding-left: 30px;
+}
+
+#fnummer-form{
+    font-size: 20px;
+}
+
+
+
+.fields p.desk {
+        margin: 0 0 1em;
+}
+
+.box p {
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+    max-width: 50em;
+}
+
+.box label {
+    padding: 2em 1em 0 0;
+    text-align: right;
+    display: block;
+    float: left;
+}
+
+.inputfield {
+    background: #fff;
+    color: #4C4E52;
+    padding: .6em;
+    border: 2px solid #dde1e6;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 400;
+    width: 300px;
+    margin: 0 10px 0 0;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"] + label span {
+    background: url("IMG/emptycheckbox.svg") left top no-repeat;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: .3em;
+    margin-bottom: .2em;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+    border: 2px solid transparent;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(IMG/activecheckmark.svg) left top no-repeat;
+}
+
+.buttonsubmit {
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    width: auto;
+    padding: 7px 20px 8px;
+    margin: 0 5px 5px 0;
+    border-radius: 0;
+    text-decoration: none;
+    text-shadow: none;
+    white-space: nowrap;
+    font-size: 15px;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    line-height: 1.5;
+    color: #fff;
+    border: 0;
+    transition: all .2s ease-in-out;
+    background-color: #e32d22;
+    
+}
+
+.checkbox-wrapper {
+    margin-bottom: .9em;
+}
+
+.clear {
+    clear: both;
+}
+
+.link {
+    font-weight: 400;
+    text-align: right;
+}
+
+.feilmld{
+   color:#009933;
+   font-weight: bold;
+   font-size: 0.7em;
+}
+
+#mobbilde {
+    height: 176px;
+    width: 293px;
+    position: absolute;
+    top: 348px;
+    left: 0
+}
+
+#number { 
+   position: absolute;
+   top: 407px;
+   left: 127px;
+   width: 100%;
+   z-index: 901;
+   font-size: 18px;
+   font-weight: bold;
+   color:#000;
+   max-width: 100px;
+}
+
+#topbox p{
+    line-height: 1;
+}
+
+#number2 { 
+   position: absolute; 
+   top: 364px;
+   left: 91px; 
+   width: 100%; 
+   z-index: 901;
+   font-size: 18px;
+   font-weight: bold;
+   max-width: 100px;
+}
+
+#tankebilde {
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    top: 230px;
+    left: 0;
+}
+
+button#button-bryt{
+    float: right;
+    color: black;
+    font-size: 1em;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 9px;
+    margin-right: 85px;
+    cursor: pointer;
+}
+
+button.buttonIcon {
+    background-color: transparent;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 1px 6px;
+    border: 1px solid #bbb;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #555;
+    height: 31px;
+    min-width: 21px;
+    white-space: nowrap;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+button#button-bryt:hover, button#button-bryt:focus {
+    border: 1px solid #0078BD;
+    transition: all 100ms ease-in-out;
+    background-color:#ddd;
+}
+
+button#button-bryt:active {
+    font-size: .8em;
+    transition: all 100ms ease-in-out;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        min-width: 95%;
+        margin: 0px;
+    }
+    
+    section {
+        width: 95%;
+        padding-top: 3em;
+        
+    }
+    
+    .aA {
+        display:none;
+    }
+    
+    #sprak {
+        display: none;
+    }
+    
+    #bankid-bilde {
+        max-width: 80px;
+        height: auto;
+    }
+    
+    #tekst {
+        width: 90%;
+        padding-left: 90px;
+    }
+    
+    .box {
+        padding: 2em .5em 1em;
+    }
+    
+    #bankid {
+        width: 100%;
+        font-size: 14px;
+        padding: 1em 0em 1em;
+        background: #fff;
+    }
+    
+    #banktitle {
+        font-size: 1.3em;
+        margin-top: 0px;
+    }
+    
+    #innerbox {
+        width: 75%;
+        margin: 0;
+        border: none;
+        padding: 0.5em 0em 1em;
+    }
+    
+    #topbox {
+        padding-left: 42.5%;
+    }
+    
+    #regg {
+        min-width: 110%;
+    }
+    
+    .inputfield {
+        width: 76%;
+    }
+    
+    button#button-bryt {
+        margin-right: 0px;
+        float: none;
+    }
+    
+    #mainbox {
+        padding-left: 10px;
+        padding-bottom: 0px;
+    }
+    
+    #mobbilde {
+        top: 415px;
+        left: 14px;
+    }
+    
+    #number {
+        top: 473px;
+        left: 143px;
+    }
+    
+    #tankebilde {
+        height: 200px;
+        width: 150px;
+        position: absolute;
+        top: 370px;
+        left: 138px;
+    }
+    
+    #number2 {
+        top: 422px;
+        left: 180px;
+    }
+}

@@ -1,0 +1,942 @@
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    height: auto;
+    font: 1.4em/140% Arial, Helvetica, sans-serif;
+    color: #444;
+    background: #f3f4f4;
+    margin: 0;
+    min-width: 1000px;
+    height: 100%;
+    overflow-x: hidden;
+    
+}
+
+.container {
+    margin-top: 100px;
+    width: 500px;
+    max-width: 1024px;
+    margin: 0 auto;
+    
+}
+
+#wrapper {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 71px;
+    background: #f3f4f4;
+    
+}
+
+.top-panel {
+    width: 100%;
+    background: #646464;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    padding: 7px 0 0;
+    height: 33px;
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    background: -moz-linear-gradient(bottom, #333333 0%, #656565 100%);
+    background: -o-linear-gradient(bottom, #333333 0%, #656565 100%);
+    background: -webkit-linear-gradient(bottom, #333333 0%, #656565 100%);
+    background-image: linear-gradient(to top, #333333 0%, #656565 100%);
+    
+}
+
+.top-panel .holder {
+    width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+
+.top-panel .top-link {
+    background: url("IMG/bullet02.gif") no-repeat 0 45%;
+    padding: 0 0 0 13px;
+    text-transform: uppercase;
+    float: left;
+    
+}
+
+a {
+    color: #1a71a5;
+    text-decoration: none;
+    
+}
+
+.top-panel a {
+    color: white;
+    
+}
+
+#wrapper + #header {
+    margin-top: 91px;
+    
+}
+
+#header {
+    height: auto;
+    padding: 30px 0px 10px 0px;
+    margin-bottom: 20px;
+    position: relative;
+    background: transparent url("IMG/bg-header-btm-border.gif") repeat-x bottom;
+    
+}
+
+.logo {
+    max-width: 135px;
+    max-height: 90px;
+    position: absolute;
+    right: 0;
+    bottom: 11px;
+    
+}
+
+.logo a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    
+}
+
+#header h1 {
+    font-size: 1.71em;
+    font-weight: normal;
+    margin: 0;
+    line-height: 1.3em;
+    padding-right: 140px;
+    letter-spacing: 0.5px;
+    
+}
+
+#header::after {
+    content: "";
+    display: block;
+    clear: both;
+    
+}
+
+.box {
+    width: 228px;
+    margin-right: 12px;
+    position: relative;
+    
+}
+
+#content .box {
+    padding: 10px 20px;
+    overflow: hidden;
+    width: 100%;
+    background: white;
+    border: 1px solid #dadbdb;
+    border-top: none;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 3px;
+    margin: 0;
+    margin-bottom: 20px;
+    -moz-box-shadow: 0 1px 0px #ababab;
+    -webkit-box-shadow: 0 1px 0px #ababab;
+    box-shadow: 0 1px 0px #ababab;
+    
+}
+
+.box-top {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    position: relative;
+    
+}
+
+#main h2.with-logo {
+    background: transparent url("IMG/eid-logo.gif") no-repeat left top;
+    padding-left: 37px;
+    width: 400px;
+    
+}
+
+#main h2 {
+    font-size: 14px;
+    line-height: 2.14em;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+
+.choices {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-bottom: 7px;
+    
+}
+
+.choices li {
+    padding: 0;
+    margin: 0;
+    
+}
+
+.choices a {
+    display: block;
+    position: relative;
+    padding: 10px 10px 0px 10px;
+    width: auto;
+    background: #f1f1f1 url("IMG/arrow-grey.png") no-repeat 97% 50%;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 9px;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    
+}
+
+.choices a:hover {
+    background: #e1e1e1 url("IMG/arrow-grey.png") no-repeat 97% 50%;
+}
+
+.choices img, .choices .text {
+    float: left;
+    margin-right: 10px;
+    
+}
+
+.choices .text {
+    float: none !important;
+    
+}
+
+.box .choices .btn-title {
+    margin-bottom: 3px;
+    
+}
+
+.box .choices h3, .box .choices .btn-title {
+    font-size: 1.38em;
+    display: block;
+    float: none;
+    color: #333333;
+    margin-top: 3px;
+    
+}
+
+.box .btn-title + .btn-ingress {
+    color: #444;
+    font-size: 14px;
+    padding-top: 0;
+    
+}
+
+.choices .text .btn-ingress {
+    display: block;
+    line-height: 18px;
+    padding-left: 110px;
+    
+}
+
+.choices a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    
+}
+
+#content .box-bottom {
+    margin: 20px -20px -10px -20px;
+    overflow: hidden;
+    width: 100%;
+    background: #f1f1f1 url("IMG/bg-header-btm-border.gif") repeat-x top;
+    color: #555;
+    border-top: 1px solid white;
+    padding: 8px 20px 6px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    
+}
+
+#content .box-bottom .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+ul.menu {
+    padding: 0;
+    margin: 0;
+    
+}
+
+#content .box-bottom .menu li, #content .box-bottom .menu li .linkbtn {
+    float: left;
+    font-size: 0.93em;
+    margin: 0 10px 0 -20px;
+    padding: 0 20px;
+    
+}
+
+#content .box-bottom .menu li a, #content .box-bottom .menu li .linkbtn a {
+    font-size: inherit !important;
+    
+}
+
+#main::after {
+    content: "";
+    display: block;
+    clear: both;
+    
+}
+
+#footer {
+    border-top: 1px solid #ccc;
+    clear: both;
+    background: transparent url("IMG/bg-header-btm-border.gif") repeat-x top;
+    padding: 12px 0 0;
+    color: #555;
+    margin-top: 28px;
+    
+}
+
+.box-top.noborder {
+    border: 0;
+    
+}
+
+.bidweb {
+    height: 320px;
+}
+
+
+/************************************/
+/*ID-porten*/   
+/************************************/
+
+
+
+.body .viewport .stop_class {
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 10;
+    height:0;
+}
+
+.full_width_height, .document_presentation .layout_container2, .document_presentation .layout_container2 > div > .content.body > .wrapper, .document_presentation .layout_container2 > div > .content.body > .wrapper > .inner, .document_presentation .layout_container2 > .content.body > .wrapper, .document_presentation .layout_container2 > .content.body > .wrapper > .inner, .form_wrapper .row.form .input_wrapper .label .input > .wrp, .content_wrapper .row.form .input_wrapper .label .input > .wrp, .content.document.xml, .content.document.xml iframe, .content.document.xml .wrapper, .content.document.download .link_document_wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.layout {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #FBFBFB;
+    border: 1px solid #bbb;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.layout > header, .layout > footer {
+    height: 46px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.layout > header {
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #bbb;
+    line-height: 1;
+}
+
+.layout > header, .layout > section, .layout > footer {
+    position: absolute;
+    width: 100%;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+.layout > header .viewport {
+    right: 78px;
+}
+
+.layout > header > .viewport, .layout > header > .viewport, .layout > footer > .viewport, .layout > footer > .viewport {
+    left: 5px;
+    right: 5px;
+}
+
+.layout > header > .viewport, .layout > footer > .viewport {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.layout > header .viewport > .container2, .layout > header .viewport > .lm_view {
+    white-space: nowrap;
+    height:100%;
+}
+
+.layout .viewport .lm_view, .layout .viewport .view {
+    left: 0;
+    top: 0;
+
+}
+
+.block_vertical_center, .block_vertical_center::before, .block_vertical_center > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer .viewport .lm_view {
+    height:100%;
+}
+
+.block_vertical_center::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.layout > header .logo_wrapper {
+    display: block;
+    height: 100%;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.layout > header .logo_wrapper .img_wrapper {
+    width: 91px;
+    height: 17px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+
+.layout > header .logo_wrapper > * {
+    display: inline-block;
+    white-space: normal;
+}
+
+.layout > header .logo_wrapper .img_wrapper img {
+    position: absolute;
+    width: 91px;
+    height: 17px;
+    vertical-align: middle;
+}
+
+.layout > header .logo_wrapper::after {
+    content: '';
+    display: inline-block;
+    height: inherit;
+    vertical-align: middle;
+    width: 0;
+}
+
+.layout > header .viewport > .container2 .logo_wrapper + .title_wrapper, .layout > header .viewport > .lm_view .logo_wrapper + .title_wrapper {
+    right: 5px;
+    left: 91px;
+    top: 0;
+}
+
+.layout > header .viewport {
+    right: 120px;
+}
+
+.layout > header .title_wrapper {
+    position: absolute;
+    line-height: 1.2;
+}
+
+.layout > header .title_wrapper {
+    height: 100%;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 1px;
+    margin-left: 10px;
+}
+
+.title_wrapper, .logo_wrapper {
+    right: 5px;
+    left: 91px;
+    top: 0;
+}
+
+.layout > header .title_wrapper * {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.layout > header .title_wrapper h1 {
+    color: #555;
+    display: inline-block;
+    height: 100%;
+}
+
+.block_vertical_center::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.layout > header .title_wrapper h1 .title {
+    padding-bottom: 3px;
+}
+
+.layout > header .title_wrapper h1 .title {
+    font-size: 18px;
+}
+
+.layout > header .logo_wrapper::after {
+    content: '';
+    display: inline-block;
+    height: inherit;
+    vertical-align: middle;
+    width: 0;
+}
+
+
+.layout > section {
+    left: 0;
+    right: 0;
+    top: 46px;
+    bottom: 46px;
+}
+
+.layout .viewport.animate {
+    overflow: hidden;
+    position: absolute;
+}
+
+.layout > section > .viewport {
+    height: 100%;
+    width: 100%;
+}
+
+.layout .viewport .lm_view.padding, .layout .viewport .view.padding {
+    padding: 0 10px 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.layout .viewport.animate .lm_view {
+    position: absolute;
+    z-index: 10;
+}
+
+.layout > section > .viewport .lm_view {
+    width: 100%;
+}
+
+.layout > section > .viewport .lm_view > .lm_view_habla {
+    width: 100%;
+    padding-top: 60px;
+}
+
+.form_wrapper, .content_wrapper {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+}
+
+.form_wrapper .row.label, .content_wrapper .row.label {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+    color: #000;
+}
+
+.form_wrapper .row.label, .form_wrapper .row.message, .content_wrapper .row.label, .content_wrapper .row.message {
+    padding-left: 10px;
+    position: relative;
+}
+
+.form_wrapper .row.form, .content_wrapper .row.form {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+
+.form_wrapper .row.label label, .content_wrapper .row.label label {
+    font-size: 18px;
+}
+
+.form_wrapper .row.form .input_wrapper, .content_wrapper .row.form .input_wrapper {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    right: 60px;
+    top: 0;
+    bottom: 0;
+}
+
+.form_wrapper .row.form .input_wrapper .label, .content_wrapper .row.form .input_wrapper .label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #bbb;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form_wrapper .row.form .input_wrapper .label .icon, .content_wrapper .row.form .input_wrapper .label .icon {
+    position: absolute;
+    height: 100%;
+    width: 40px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    z-index: 100;
+}
+
+.form_wrapper .row.form .input_wrapper .label .icon div, .content_wrapper .row.form .input_wrapper .label .icon div {
+    display: inline-block;
+    width: 100%;
+    white-space: normal;
+}
+
+.form_wrapper .row.form .input_wrapper .label .icon div img, .content_wrapper .row.form .input_wrapper .label .icon div img {
+    vertical-align: middle;
+    z-index: 100;
+}
+
+.form_wrapper .row.form .input_wrapper .label .icon::after, .content_wrapper .row.form .input_wrapper .label .icon::after {
+    content: '';
+    display: inline-block;
+    height: inherit;
+    vertical-align: middle;
+    width: 0;
+}
+
+.form_wrapper .row.form .input_wrapper .label .icon, .content_wrapper .row.form .input_wrapper .label .icon {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.form_wrapper .row.form .input_wrapper .label .icon + .input, .content_wrapper .row.form .input_wrapper .label .icon + .input {
+    left: 40px;
+}
+
+.form_wrapper .row.form .input_wrapper .label .input, .content_wrapper .row.form .input_wrapper .label .input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+
+.form_wrapper .row.form .input_wrapper .label .input > .wrp, .content_wrapper .row.form .input_wrapper .label .input > .wrp {
+    position: relative;
+}
+
+.form_wrapper .row.form .input_wrapper .label .input .placeholder, .form_wrapper .row.form .input_wrapper .label .input input, .content_wrapper .row.form .input_wrapper .label .input .placeholder, .content_wrapper .row.form .input_wrapper .label .input input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: middle;
+    width: 100%;
+    font-size: 18px;
+    color: #000;
+    letter-spacing: 0.1em;
+    background: transparent;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    padding-right: 1px;
+}
+
+.form_wrapper .row.form > .button_icon_wrapper, .content_wrapper .row.form > .button_icon_wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: block;
+    height: 100%;
+    white-space: nowrap;
+    width: 53px;
+}
+
+.form_wrapper .row.form > .button_icon_wrapper button, .content_wrapper .row.form > .button_icon_wrapper button {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    white-space: normal;
+    max-height: 40px;
+    height: 100%;
+}
+
+.row .button_icon_wrapper button.buttonIcon {
+    background-color: #0078BD;
+    border: 0;
+    font-size: 10px;
+}
+
+.form_wrapper .row.form > .button_icon_wrapper::after, .content_wrapper .row.form > .button_icon_wrapper::after {
+    content: '';
+    display: inline-block;
+    height: inherit;
+    vertical-align: middle;
+    width: 0;
+}
+
+.form_wrapper .row.message, .content_wrapper .row.message {
+    padding-top: 5px;
+    color: #555;
+    font-size: 14px;
+    max-width: 280px;
+}
+
+.layout > footer {
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #bbb;
+    -moz-transition: all 150ms ease-out;
+    -o-transition: all 150ms ease-out;
+    -webkit-transition: all 150ms ease-out;
+    transition: all 150ms ease-out;
+}
+
+.layout > header .button_icon_wrapper, .layout > footer .button_icon_wrapper {
+    display: block;
+    height: 100%;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.button_icon_wrapper {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.layout > header .button_icon_wrapper > *, .layout > footer .button_icon_wrapper > * {
+    display: inline-block;
+    white-space: normal;
+}
+
+button.buttonIcon {
+    background-color: transparent;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 1px 6px;
+    border: 1px solid #bbb;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #555;
+    height: 31px;
+    min-width: 21px;
+    white-space: nowrap;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 10px;
+    cursor:pointer;
+}
+
+button#button-bryt:hover, button#button-bryt:focus {
+    border: 1px solid #0078BD;
+    transition: all 100ms ease-in-out;
+    background-color:#ddd;
+}
+
+button.buttonIcon > * {
+    vertical-align: middle;
+}
+
+button > * {
+    display: inline-block;
+}
+
+.layout > header .button_icon_wrapper::after, .layout > footer .button_icon_wrapper::after {
+    content: '';
+    display: inline-block;
+    height: inherit;
+    vertical-align: middle;
+    width: 0;
+}
+
+.signature {
+    left: 35px;
+}
+
+.layout > footer .signature {
+    max-width: 100%;
+    right: 5px;
+}
+
+.layout > footer .signature {
+    vertical-align: middle;
+    display: inline-block;
+    color: #555;
+    padding: 0 0 0 10px;
+    max-width: 100%;
+}
+
+.layout > footer .signature .title {
+    font-size: 12px;
+}
+
+.layout > footer[data-layout] .signature * {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.layout > footer .signature .title::after {
+    content: ":";
+}
+
+.layout > footer .signature .text {
+    font-size: 14px;
+}
+
+.layout > header > .viewport .container2, .layout > footer > .viewport .container2 {
+    height: 100%;
+}
+
+.feilmld{
+   color:#009933;
+   font-weight: bold;
+}
+
+#mobbilde {
+    height: 176px;
+    width: 293px;
+    position: absolute;
+    top: 348px;
+    left: 0;
+}
+
+#number { 
+    position: absolute;
+    top: 423px;
+    left: 122px;
+    width: 100%;
+    z-index: 901;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    max-width: 75px;
+}
+
+#number2 { 
+   position: absolute; 
+   top: 364px;
+   left: 91px; 
+   width: 100%; 
+   z-index: 901;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+#tankebilde {
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    top: 230px;
+    left: 0;
+}
+
+button#button-bryt{
+    float: right;
+    color: black;
+    font-size: 1em;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+button#button-bryt:active {
+    font-size: .8em;
+    transition: all 100ms ease-in-out;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        margin:0;
+        width: 90%;
+    }
+    
+    body {
+        min-width: 0;
+    }
+    
+    #mobbilde {
+        top: 485px;
+        left: 23px;
+    }
+    
+    #number {
+        top: 566px;
+        left: 145px;
+    }
+    
+    #tankebilde {
+        height: 200px;
+        width: 150px;
+        position: absolute;
+        top: 462px;
+        left: 170px;
+    }
+    
+    #number2 {
+        top: 525px;
+        left: 210px;
+    }
+}

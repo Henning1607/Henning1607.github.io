@@ -1,0 +1,34 @@
+#bigger {
+    display: none;
+    background:#fff;
+    border:2px solid #000;
+    height: 120px;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    width:90%;
+    margin-left:10px;
+    line-height: 1.5;
+    font-size: 2.5em;   
+}
+
+#litena {
+    font-size: 15px;
+}
+
+.aA
+{
+    letter-spacing: -2px;
+    text-align: right;
+    color: #fff;
+    line-height: 1;
+    position: absolute;
+    left: 525px;
+    top: 8px;  
+    width: 13em;
+    z-index: 1001;
+    font-size: 20px;
+    color: #fff;
+    max-width: 30px;
+}
+.aA:hover + #bigger, .aA:active + #bigger {
+    display: block;
+}

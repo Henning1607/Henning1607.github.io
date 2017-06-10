@@ -1,0 +1,262 @@
+html, body {
+    margin: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    padding: 0;
+    line-height: 1;
+    font-size: 100%;
+    font-family: Arial,Helvetica,sans-serif;
+    vertical-align: baseline;
+}
+
+body {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    color: #4d4f53;
+    background: #fff;
+    overflow:hidden;
+}
+
+header {
+    height: 56px;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    font-size: 14px;
+    min-width: 20em;
+    position: fixed;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    -webkit-transform: translateZ(0);
+}
+
+header h1 {
+    position: absolute;
+    top: 1em;
+    left: 2em;
+}
+
+header ul a:hover, header ul a:active {
+    border-color: #fff;
+}
+
+h1 {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 1em;
+}
+
+h1, h2 {
+    letter-spacing: -.04em;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+}
+
+a, .linked {
+    /*color: #006FB7;
+    border-bottom: 1px solid #dde1e6;
+    text-decoration: none;
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;*/
+}
+
+.img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(IMG/digipost-new.png);
+    display: inline-block;
+    width: 107px;
+    height: 28px;
+    text-indent: -999em;
+}
+
+ul , menu {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+header ul {
+    font-size: 1em;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    right: 150px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+li {
+    display: inline;
+    text-align: -webkit-match-parent;
+}
+
+header ul a {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 17px 15px;
+    margin: 0;
+    float: left;
+    text-decoration: none;
+    text-shadow: none;
+    border-top: .3em solid transparent;
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+
+#top {
+    background-image: url(IMG/kaffefugl.jpg);
+    background-position: 65% 30%;
+    background-size: cover;
+    height: 100%;
+    padding-top: 56px;
+}
+
+#top::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,.4) 0, rgba(0,0,0,.1) 12%, rgba(0,0,0,0) 21%);
+}
+
+.bg-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.heropitch {
+    position: absolute;
+    top: 12%;
+    left: 8%;
+    width: 60%;
+}
+
+.first {
+    background: #000;
+    background: rgba(0,0,0,.4);
+    padding: 2em;
+    background: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: .1em;
+    background: 0;
+    padding: 0;
+    letter-spacing: -.03em;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+h2, .subpoint {
+    text-align: left;
+    color: #fff;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+}
+
+.button-btn {
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    width: auto;
+    padding: 7px 20px 8px;
+    margin: 0 5px 5px 0;
+    border-radius: 0;
+    text-decoration: none;
+    text-shadow: none;
+    white-space: nowrap;
+    font-size: 16px;
+    letter-spacing: -.01em;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    line-height: 1.5;
+    color: #fff;
+    border: 2px solid #E32D22;
+    transition: all .2s ease-in-out;
+    background-color: #e32d22;
+    
+}
+
+.button-btn:focus, .button-btn:hover {
+    text-decoration: none;
+    cursor:pointer;
+    color: #fff;
+    background-color: #fa2d16;
+    outline: 0;
+    backface-visibility: hidden;
+    
+    
+}
+
+.first .subpoint {
+    font-size: 1.8em;
+    margin-bottom: 1.5em;
+    letter-spacing: .01em;
+    font-family: FoundryMonolineRegular,Arial,Helvetica,sans-serif;
+    
+}
+
+.end {
+    position: absolute;
+    top: .9em;
+    right: 2em;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    
+}
+
+@media only screen and (max-width: 500px) {
+    .heropitch {
+        width: 100%;
+    }
+    
+    .end {
+        display:none;
+    }
+    
+    header ul {
+        right:0%;
+        top:5%;
+    }
+    
+    header h1 {
+        top:0;
+        left:0;
+    }
+    
+    header ul li a, .subpoint {
+        text-shadow: 2px 1px #000;
+    }
+}
